@@ -1,0 +1,195 @@
+# Entity: food
+
+main: kit: entity: food: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "barcode"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "brand"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "calories_kcal"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "carbs_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "category"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "cholesterol_mg"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "confidence"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "count"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "fat_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "fiber_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "image_thumb_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "image_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "potassium_mg"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "protein_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "saturated_fat_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "serving_desc"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "serving_size_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "sodium_mg"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "source"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "static_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "sugar_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "food"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/foods/categories"
+          parts: [
+            "foods"
+            "categories"
+          ]
+          select: {
+            "$action": "category"
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: 1068319
+                kind: "param"
+                name: "id"
+                orig: "food_id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/food/{food_id}"
+          parts: [
+            "food"
+            "{id}"
+          ]
+          rename: {
+            param: {
+              food_id: "id"
+            }
+          }
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,32 @@
+# BasicBarcodeFlow
+
+main: kit: flow: BasicBarcodeFlow:
+{
+  entity: "barcode",
+  kind: "basic",
+  name: "BasicBarcodeFlow",
+  step: [
+    {
+      input: {
+        ref: "barcode_ref01",
+        srcdatavar: "barcode_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "barcode01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-barcode_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicBarcodeFlow"
+}

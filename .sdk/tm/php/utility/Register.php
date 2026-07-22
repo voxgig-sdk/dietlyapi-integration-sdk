@@ -1,0 +1,67 @@
+<?php
+declare(strict_types=1);
+
+// DietlyapiIntegration SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+DietlyapiIntegrationUtility::setRegistrar(function (DietlyapiIntegrationUtility $u): void {
+    $u->clean = [DietlyapiIntegrationClean::class, 'call'];
+    $u->done = [DietlyapiIntegrationDone::class, 'call'];
+    $u->make_error = [DietlyapiIntegrationMakeError::class, 'call'];
+    $u->feature_add = [DietlyapiIntegrationFeatureAdd::class, 'call'];
+    $u->feature_hook = [DietlyapiIntegrationFeatureHook::class, 'call'];
+    $u->feature_init = [DietlyapiIntegrationFeatureInit::class, 'call'];
+    $u->fetcher = [DietlyapiIntegrationFetcher::class, 'call'];
+    $u->make_fetch_def = [DietlyapiIntegrationMakeFetchDef::class, 'call'];
+    $u->make_context = [DietlyapiIntegrationMakeContext::class, 'call'];
+    $u->make_options = [DietlyapiIntegrationMakeOptions::class, 'call'];
+    $u->make_request = [DietlyapiIntegrationMakeRequest::class, 'call'];
+    $u->make_response = [DietlyapiIntegrationMakeResponse::class, 'call'];
+    $u->make_result = [DietlyapiIntegrationMakeResult::class, 'call'];
+    $u->make_point = [DietlyapiIntegrationMakePoint::class, 'call'];
+    $u->make_spec = [DietlyapiIntegrationMakeSpec::class, 'call'];
+    $u->make_url = [DietlyapiIntegrationMakeUrl::class, 'call'];
+    $u->param = [DietlyapiIntegrationParam::class, 'call'];
+    $u->prepare_auth = [DietlyapiIntegrationPrepareAuth::class, 'call'];
+    $u->prepare_body = [DietlyapiIntegrationPrepareBody::class, 'call'];
+    $u->prepare_headers = [DietlyapiIntegrationPrepareHeaders::class, 'call'];
+    $u->prepare_method = [DietlyapiIntegrationPrepareMethod::class, 'call'];
+    $u->prepare_params = [DietlyapiIntegrationPrepareParams::class, 'call'];
+    $u->prepare_path = [DietlyapiIntegrationPreparePath::class, 'call'];
+    $u->prepare_query = [DietlyapiIntegrationPrepareQuery::class, 'call'];
+    $u->result_basic = [DietlyapiIntegrationResultBasic::class, 'call'];
+    $u->result_body = [DietlyapiIntegrationResultBody::class, 'call'];
+    $u->result_headers = [DietlyapiIntegrationResultHeaders::class, 'call'];
+    $u->transform_request = [DietlyapiIntegrationTransformRequest::class, 'call'];
+    $u->transform_response = [DietlyapiIntegrationTransformResponse::class, 'call'];
+});

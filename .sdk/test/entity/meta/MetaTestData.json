@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "meta": {
+      "META00": {
+        "foods_in_db": "s14",
+        "status": "s15",
+        "id": "META00"
+      },
+      "META01": {
+        "foods_in_db": "s28",
+        "status": "s29",
+        "id": "META01"
+      },
+      "META02": {
+        "foods_in_db": "s3c",
+        "status": "s3d",
+        "id": "META02"
+      }
+    }
+  },
+  "new": {
+    "meta": {
+      "meta_ref01": {
+        "foods_in_db": "s50",
+        "status": "s51"
+      }
+    }
+  }
+}

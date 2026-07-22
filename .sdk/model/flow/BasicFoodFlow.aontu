@@ -1,0 +1,44 @@
+# BasicFoodFlow
+
+main: kit: flow: BasicFoodFlow:
+{
+  entity: "food",
+  kind: "basic",
+  name: "BasicFoodFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "food_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "food_ref01",
+        srcdatavar: "food_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "food01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-food_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicFoodFlow"
+}

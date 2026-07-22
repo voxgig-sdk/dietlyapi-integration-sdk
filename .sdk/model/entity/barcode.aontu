@@ -1,0 +1,170 @@
+# Entity: barcode
+
+main: kit: entity: barcode: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "barcode"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "brand"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "calories_kcal"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "carbs_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "category"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "cholesterol_mg"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "confidence"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "fat_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "fiber_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "image_thumb_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "image_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "potassium_mg"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "protein_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "saturated_fat_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "serving_desc"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "serving_size_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "sodium_mg"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "source"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "static_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "sugar_g"
+      req: false
+      type: "`$NUMBER`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "barcode"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: "0855088005245"
+                kind: "param"
+                name: "id"
+                orig: "code"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/barcode/{code}"
+          parts: [
+            "barcode"
+            "{id}"
+          ]
+          rename: {
+            param: {
+              code: "id"
+            }
+          }
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,7 @@
+# Entity Models
+
+@"barcode.aontu"
+@"food.aontu"
+@"meta.aontu"
+@"popular.aontu"
+@"search.aontu"

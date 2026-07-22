@@ -1,0 +1,29 @@
+{
+  "name": "voxgig-sdk/dietlyapi-integration",
+  "description": "Unofficial generated PHP SDK for the Dietly public API. Not affiliated with or endorsed by the upstream API provider.",
+  "type": "library",
+  "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "dietlyapi-integration"],
+  "homepage": "https://github.com/voxgig-sdk/dietlyapi-integration-sdk",
+  "license": "MIT",
+  "authors": [
+    { "name": "Voxgig", "homepage": "https://voxgig.com" }
+  ],
+  "support": {
+    "issues": "https://github.com/voxgig-sdk/dietlyapi-integration-sdk/issues",
+    "source": "https://github.com/voxgig-sdk/dietlyapi-integration-sdk"
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.0"
+  },
+  "autoload": {
+    "files": ["dietlyapiintegration_sdk.php"],
+    "classmap": ["core/", "entity/", "feature/", "types/", "utility/", "config.php", "features.php"]
+  },
+  "autoload-dev": {
+    "classmap": ["test/"]
+  }
+}
