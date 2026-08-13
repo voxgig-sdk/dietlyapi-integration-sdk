@@ -26,8 +26,8 @@ import {
 describe('BarcodeEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DIETLYAPIINTEGRATION_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DIETLYAPIINTEGRATION_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DIETLYAPI_INTEGRATION_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DIETLYAPI_INTEGRATION_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = DietlyapiIntegrationSDK.test()
@@ -63,7 +63,7 @@ describe('BarcodeEntity', async () => {
     const barcode_ref01_ent = client.Barcode()
     const barcode_ref01_match_dt0: any = {}
     barcode_ref01_match_dt0.id = barcode_ref01_data.id
-    const barcode_ref01_data_dt0 = await barcode_ref01_ent.load(barcode_ref01_match_dt0)
+    const barcode_ref01_data_dt0 = (await barcode_ref01_ent.load(barcode_ref01_match_dt0)).data()
     assert(barcode_ref01_data_dt0.id === barcode_ref01_data.id)
 
 

@@ -37,7 +37,7 @@ $client = new DietlyapiIntegrationSDK([
 
 ```php
 try {
-    // load() returns the bare Barcode record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Barcode record (throws on error).
     $barcode = $client->Barcode()->load(["id" => "example_id"]);
     print_r($barcode);
 } catch (\Throwable $err) {
@@ -53,7 +53,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $barcode = $client->Barcode()->load(["id" => "example_id"]);
+    $searchs = $client->Search()->list();
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -120,17 +120,15 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```php
-$client = DietlyapiIntegrationSDK::test([
-    "entity" => ["barcode" => ["test01" => ["id" => "test01"]]],
-]);
+$client = DietlyapiIntegrationSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
-$barcode = $client->Barcode()->load(["id" => "test01"]);
-print_r($barcode);
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
+$search = $client->Search()->list();
+print_r($search);
 ```
 
 ### Use a custom fetch function
@@ -234,7 +232,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -433,7 +431,7 @@ Create an instance: `$barcode = $client->Barcode();`
 #### Example: Load
 
 ```php
-// load() returns the bare Barcode record (throws on error).
+// load() returns the ENTITY — call data_get() for the Barcode record (throws on error).
 $barcode = $client->Barcode()->load(["id" => "barcode_id"]);
 ```
 
@@ -480,7 +478,7 @@ Create an instance: `$food = $client->Food();`
 #### Example: Load
 
 ```php
-// load() returns the bare Food record (throws on error).
+// load() returns the ENTITY — call data_get() for the Food record (throws on error).
 $food = $client->Food()->load(["id" => 1]);
 ```
 
@@ -512,7 +510,7 @@ Create an instance: `$meta = $client->Meta();`
 #### Example: Load
 
 ```php
-// load() returns the bare Meta record (throws on error).
+// load() returns the ENTITY — call data_get() for the Meta record (throws on error).
 $meta = $client->Meta()->load();
 ```
 
@@ -679,15 +677,15 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$barcode = $client->Barcode();
-$barcode->load(["id" => "example_id"]);
+$search = $client->Search();
+$search->list();
 
-// $barcode->data_get() now returns the barcode data from the last load
-// $barcode->match_get() returns the last match criteria
+// $search->data_get() now returns the search data from the last list
+// $search->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

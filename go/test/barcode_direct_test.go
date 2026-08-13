@@ -43,7 +43,8 @@ func TestBarcodeDirect(t *testing.T) {
 		if setup.live {
 			// Live mode is lenient: synthetic IDs frequently 4xx. Skip
 			// rather than fail when the load endpoint isn't reachable with
-			// the IDs we can construct from setup.idmap.
+			// the IDs we can construct from setup.idmap — unless the model
+			// sets main.kit.test.live.strict.
 			if err != nil {
 				t.Skipf("load call failed (likely synthetic IDs against live API): %v", err)
 			}
@@ -108,21 +109,21 @@ func barcodeDirectSetup(mockres any) *barcodeDirectSetupResult {
 	calls := &[]map[string]any{}
 
 	env := envOverride(map[string]any{
-		"DIETLYAPIINTEGRATION_TEST_BARCODE_ENTID": map[string]any{},
-		"DIETLYAPIINTEGRATION_TEST_LIVE":    "FALSE",
-		"DIETLYAPIINTEGRATION_APIKEY":       "NONE",
+		"DIETLYAPI_INTEGRATION_TEST_BARCODE_ENTID": map[string]any{},
+		"DIETLYAPI_INTEGRATION_TEST_LIVE":    "FALSE",
+		"DIETLYAPI_INTEGRATION_APIKEY":       "NONE",
 	})
 
-	live := env["DIETLYAPIINTEGRATION_TEST_LIVE"] == "TRUE"
+	live := env["DIETLYAPI_INTEGRATION_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["DIETLYAPIINTEGRATION_APIKEY"],
+			"apikey": env["DIETLYAPI_INTEGRATION_APIKEY"],
 		}
 		client := sdk.NewDietlyapiIntegrationSDK(mergedOpts)
 
 		idmap := map[string]any{}
-		if entidRaw, ok := env["DIETLYAPIINTEGRATION_TEST_BARCODE_ENTID"]; ok {
+		if entidRaw, ok := env["DIETLYAPI_INTEGRATION_TEST_BARCODE_ENTID"]; ok {
 			if entidStr, ok := entidRaw.(string); ok && strings.HasPrefix(entidStr, "{") {
 				json.Unmarshal([]byte(entidStr), &idmap)
 			} else if entidMap, ok := entidRaw.(map[string]any); ok {

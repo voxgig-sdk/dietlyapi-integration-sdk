@@ -209,6 +209,7 @@ module DietlyapiIntegrationConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/barcode/{code}",
                   "parts" => [
@@ -412,6 +413,7 @@ module DietlyapiIntegrationConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/foods/categories",
                   "parts" => [
@@ -450,6 +452,7 @@ module DietlyapiIntegrationConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/food/{food_id}",
                   "parts" => [
@@ -506,6 +509,7 @@ module DietlyapiIntegrationConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/health",
                   "parts" => [
@@ -730,6 +734,7 @@ module DietlyapiIntegrationConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/foods/popular",
                   "parts" => [
@@ -953,6 +958,7 @@ module DietlyapiIntegrationConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/search",
                   "parts" => [

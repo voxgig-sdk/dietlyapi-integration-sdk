@@ -26,7 +26,7 @@ class BarcodeEntityTest < Minitest::Test
     # The basic flow consumes synthetic IDs from the fixture. In live mode
     # without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup[:synthetic_only]
-      skip "live entity test uses synthetic IDs from fixture — set DIETLYAPIINTEGRATION_TEST_BARCODE_ENTID JSON to run live"
+      skip "live entity test uses synthetic IDs from fixture — set DIETLYAPI_INTEGRATION_TEST_BARCODE_ENTID JSON to run live"
       return
     end
     client = setup[:client]
@@ -45,7 +45,7 @@ class BarcodeEntityTest < Minitest::Test
       "id" => barcode_ref01_data["id"],
     }
     barcode_ref01_data_dt0_loaded = barcode_ref01_ent.load(barcode_ref01_match_dt0, nil)
-    barcode_ref01_data_dt0_load_result = Helpers.to_map(barcode_ref01_data_dt0_loaded)
+    barcode_ref01_data_dt0_load_result = Helpers.to_map(barcode_ref01_data_dt0_loaded.respond_to?(:data_get) ? barcode_ref01_data_dt0_loaded.data_get : barcode_ref01_data_dt0_loaded)
     assert !barcode_ref01_data_dt0_load_result.nil?
     assert_equal barcode_ref01_data_dt0_load_result["id"], barcode_ref01_data["id"]
 
@@ -78,39 +78,39 @@ def barcode_basic_setup(extra)
   # Detect ENTID env override before envOverride consumes it. When live
   # mode is on without a real override, the basic test runs against synthetic
   # IDs from the fixture and 4xx's. Surface this so the test can skip.
-  entid_env_raw = ENV["DIETLYAPIINTEGRATION_TEST_BARCODE_ENTID"]
+  entid_env_raw = ENV["DIETLYAPI_INTEGRATION_TEST_BARCODE_ENTID"]
   idmap_overridden = !entid_env_raw.nil? && entid_env_raw.strip.start_with?("{")
 
   env = Runner.env_override({
-    "DIETLYAPIINTEGRATION_TEST_BARCODE_ENTID" => idmap,
-    "DIETLYAPIINTEGRATION_TEST_LIVE" => "FALSE",
-    "DIETLYAPIINTEGRATION_TEST_EXPLAIN" => "FALSE",
-    "DIETLYAPIINTEGRATION_APIKEY" => "NONE",
+    "DIETLYAPI_INTEGRATION_TEST_BARCODE_ENTID" => idmap,
+    "DIETLYAPI_INTEGRATION_TEST_LIVE" => "FALSE",
+    "DIETLYAPI_INTEGRATION_TEST_EXPLAIN" => "FALSE",
+    "DIETLYAPI_INTEGRATION_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
-    env["DIETLYAPIINTEGRATION_TEST_BARCODE_ENTID"])
+    env["DIETLYAPI_INTEGRATION_TEST_BARCODE_ENTID"])
   if idmap_resolved.nil?
     idmap_resolved = Helpers.to_map(idmap)
   end
 
-  if env["DIETLYAPIINTEGRATION_TEST_LIVE"] == "TRUE"
+  if env["DIETLYAPI_INTEGRATION_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["DIETLYAPIINTEGRATION_APIKEY"],
+        "apikey" => env["DIETLYAPI_INTEGRATION_APIKEY"],
       },
       extra || {},
     ])
     client = DietlyapiIntegrationSDK.new(Helpers.to_map(merged_opts))
   end
 
-  live = env["DIETLYAPIINTEGRATION_TEST_LIVE"] == "TRUE"
+  live = env["DIETLYAPI_INTEGRATION_TEST_LIVE"] == "TRUE"
   {
     client: client,
     data: entity_data,
     idmap: idmap_resolved,
     env: env,
-    explain: env["DIETLYAPIINTEGRATION_TEST_EXPLAIN"] == "TRUE",
+    explain: env["DIETLYAPI_INTEGRATION_TEST_EXPLAIN"] == "TRUE",
     live: live,
     synthetic_only: live && !idmap_overridden,
     now: (Time.now.to_f * 1000).to_i,

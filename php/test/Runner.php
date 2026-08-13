@@ -43,8 +43,8 @@ class DietlyapiIntegrationTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('DIETLYAPIINTEGRATION_TEST_LIVE');
-        $override = self::getenv('DIETLYAPIINTEGRATION_TEST_OVERRIDE');
+        $live = self::getenv('DIETLYAPI_INTEGRATION_TEST_LIVE');
+        $override = self::getenv('DIETLYAPI_INTEGRATION_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class DietlyapiIntegrationTestRunner
             }
         }
 
-        $explain = self::getenv('DIETLYAPIINTEGRATION_TEST_EXPLAIN');
+        $explain = self::getenv('DIETLYAPI_INTEGRATION_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['DIETLYAPIINTEGRATION_TEST_EXPLAIN'] = $explain;
+            $m['DIETLYAPI_INTEGRATION_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

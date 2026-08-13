@@ -6,9 +6,9 @@ import time
 
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from dietlyapiintegration_sdk.utility.voxgig_struct import voxgig_struct as vs
 from dietlyapiintegration_sdk import DietlyapiIntegrationSDK
-from core import helpers
+from dietlyapiintegration_sdk.core import helpers
 
 _TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 from test import runner
@@ -42,7 +42,7 @@ class TestSearchEntity:
         assert len(seen) == 3
 
         # Inbound: streaming active -> yields each item from the feature.
-        from config import make_config
+        from dietlyapiintegration_sdk.config import make_config
         cfg = make_config()
         if isinstance(cfg.get("feature"), dict) and "streaming" in cfg["feature"]:
             sdk = DietlyapiIntegrationSDK.test(
@@ -70,7 +70,7 @@ class TestSearchEntity:
         # without an *_ENTID env override, those IDs hit the live API and 4xx.
         if setup.get("synthetic_only"):
             pytest.skip("live entity test uses synthetic IDs from fixture — "
-                        "set DIETLYAPIINTEGRATION_TEST_SEARCH_ENTID JSON to run live")
+                        "set DIETLYAPI_INTEGRATION_TEST_SEARCH_ENTID JSON to run live")
         client = setup["client"]
 
         # Bootstrap entity data from existing test data.
@@ -118,37 +118,37 @@ def _search_basic_setup(extra):
     # mode is on without a real override, the basic test runs against synthetic
     # IDs from the fixture and 4xx's. We surface this so the test can skip.
     _entid_env_raw = os.environ.get(
-        "DIETLYAPIINTEGRATION_TEST_SEARCH_ENTID")
+        "DIETLYAPI_INTEGRATION_TEST_SEARCH_ENTID")
     _idmap_overridden = _entid_env_raw is not None and _entid_env_raw.strip().startswith("{")
 
     env = runner.env_override({
-        "DIETLYAPIINTEGRATION_TEST_SEARCH_ENTID": idmap,
-        "DIETLYAPIINTEGRATION_TEST_LIVE": "FALSE",
-        "DIETLYAPIINTEGRATION_TEST_EXPLAIN": "FALSE",
-        "DIETLYAPIINTEGRATION_APIKEY": "NONE",
+        "DIETLYAPI_INTEGRATION_TEST_SEARCH_ENTID": idmap,
+        "DIETLYAPI_INTEGRATION_TEST_LIVE": "FALSE",
+        "DIETLYAPI_INTEGRATION_TEST_EXPLAIN": "FALSE",
+        "DIETLYAPI_INTEGRATION_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
-        env.get("DIETLYAPIINTEGRATION_TEST_SEARCH_ENTID"))
+        env.get("DIETLYAPI_INTEGRATION_TEST_SEARCH_ENTID"))
     if idmap_resolved is None:
         idmap_resolved = helpers.to_map(idmap)
 
-    if env.get("DIETLYAPIINTEGRATION_TEST_LIVE") == "TRUE":
+    if env.get("DIETLYAPI_INTEGRATION_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DIETLYAPIINTEGRATION_APIKEY"),
+                "apikey": env.get("DIETLYAPI_INTEGRATION_APIKEY"),
             },
             extra or {},
         ])
         client = DietlyapiIntegrationSDK(helpers.to_map(merged_opts))
 
-    _live = env.get("DIETLYAPIINTEGRATION_TEST_LIVE") == "TRUE"
+    _live = env.get("DIETLYAPI_INTEGRATION_TEST_LIVE") == "TRUE"
     return {
         "client": client,
         "data": entity_data,
         "idmap": idmap_resolved,
         "env": env,
-        "explain": env.get("DIETLYAPIINTEGRATION_TEST_EXPLAIN") == "TRUE",
+        "explain": env.get("DIETLYAPI_INTEGRATION_TEST_EXPLAIN") == "TRUE",
         "live": _live,
         "synthetic_only": _live and not _idmap_overridden,
         "now": int(time.time() * 1000),

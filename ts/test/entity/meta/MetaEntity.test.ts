@@ -26,8 +26,8 @@ import {
 describe('MetaEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DIETLYAPIINTEGRATION_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DIETLYAPIINTEGRATION_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DIETLYAPI_INTEGRATION_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DIETLYAPI_INTEGRATION_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = DietlyapiIntegrationSDK.test()
@@ -62,7 +62,7 @@ describe('MetaEntity', async () => {
     // LOAD
     const meta_ref01_ent = client.Meta()
     const meta_ref01_match_dt0: any = {}
-    const meta_ref01_data_dt0 = await meta_ref01_ent.load(meta_ref01_match_dt0)
+    const meta_ref01_data_dt0 = (await meta_ref01_ent.load(meta_ref01_match_dt0)).data()
     assert(null != meta_ref01_data_dt0)
 
 

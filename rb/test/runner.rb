@@ -23,8 +23,8 @@ module DietlyapiIntegrationTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("DIETLYAPIINTEGRATION_TEST_LIVE")
-    override = getenv("DIETLYAPIINTEGRATION_TEST_OVERRIDE")
+    live = getenv("DIETLYAPI_INTEGRATION_TEST_LIVE")
+    override = getenv("DIETLYAPI_INTEGRATION_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module DietlyapiIntegrationTestRunner
       end
     end
 
-    explain = getenv("DIETLYAPIINTEGRATION_TEST_EXPLAIN")
-    m["DIETLYAPIINTEGRATION_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("DIETLYAPI_INTEGRATION_TEST_EXPLAIN")
+    m["DIETLYAPI_INTEGRATION_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

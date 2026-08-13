@@ -92,7 +92,7 @@ func TestPopularEntity(t *testing.T) {
 		// The basic flow consumes synthetic IDs from the fixture. In live mode
 		// without an *_ENTID env override, those IDs hit the live API and 4xx.
 		if setup.syntheticOnly {
-			t.Skip("live entity test uses synthetic IDs from fixture — set DIETLYAPIINTEGRATION_TEST_POPULAR_ENTID JSON to run live")
+			t.Skip("live entity test uses synthetic IDs from fixture — set DIETLYAPI_INTEGRATION_TEST_POPULAR_ENTID JSON to run live")
 			return
 		}
 		client := setup.client
@@ -160,38 +160,38 @@ func popularBasicSetup(extra map[string]any) *entityTestSetup {
 	// Detect ENTID env override before envOverride consumes it. When live
 	// mode is on without a real override, the basic test runs against synthetic
 	// IDs from the fixture and 4xx's. Surface this so the test can skip.
-	entidEnvRaw := os.Getenv("DIETLYAPIINTEGRATION_TEST_POPULAR_ENTID")
+	entidEnvRaw := os.Getenv("DIETLYAPI_INTEGRATION_TEST_POPULAR_ENTID")
 	idmapOverridden := entidEnvRaw != "" && strings.HasPrefix(strings.TrimSpace(entidEnvRaw), "{")
 
 	env := envOverride(map[string]any{
-		"DIETLYAPIINTEGRATION_TEST_POPULAR_ENTID": idmap,
-		"DIETLYAPIINTEGRATION_TEST_LIVE":      "FALSE",
-		"DIETLYAPIINTEGRATION_TEST_EXPLAIN":   "FALSE",
-		"DIETLYAPIINTEGRATION_APIKEY":         "NONE",
+		"DIETLYAPI_INTEGRATION_TEST_POPULAR_ENTID": idmap,
+		"DIETLYAPI_INTEGRATION_TEST_LIVE":      "FALSE",
+		"DIETLYAPI_INTEGRATION_TEST_EXPLAIN":   "FALSE",
+		"DIETLYAPI_INTEGRATION_APIKEY":         "NONE",
 	})
 
-	idmapResolved := core.ToMapAny(env["DIETLYAPIINTEGRATION_TEST_POPULAR_ENTID"])
+	idmapResolved := core.ToMapAny(env["DIETLYAPI_INTEGRATION_TEST_POPULAR_ENTID"])
 	if idmapResolved == nil {
 		idmapResolved = core.ToMapAny(idmap)
 	}
 
-	if env["DIETLYAPIINTEGRATION_TEST_LIVE"] == "TRUE" {
+	if env["DIETLYAPI_INTEGRATION_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["DIETLYAPIINTEGRATION_APIKEY"],
+				"apikey": env["DIETLYAPI_INTEGRATION_APIKEY"],
 			},
 			extra,
 		})
 		client = sdk.NewDietlyapiIntegrationSDK(core.ToMapAny(mergedOpts))
 	}
 
-	live := env["DIETLYAPIINTEGRATION_TEST_LIVE"] == "TRUE"
+	live := env["DIETLYAPI_INTEGRATION_TEST_LIVE"] == "TRUE"
 	return &entityTestSetup{
 		client:        client,
 		data:          entityData,
 		idmap:         idmapResolved,
 		env:           env,
-		explain:       env["DIETLYAPIINTEGRATION_TEST_EXPLAIN"] == "TRUE",
+		explain:       env["DIETLYAPI_INTEGRATION_TEST_EXPLAIN"] == "TRUE",
 		live:          live,
 		syntheticOnly: live && !idmapOverridden,
 		now:           time.Now().UnixMilli(),

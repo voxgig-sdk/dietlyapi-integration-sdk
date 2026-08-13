@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from dietlyapiintegration_sdk.utility.voxgig_struct import voxgig_struct as vs
 from dietlyapiintegration_sdk import DietlyapiIntegrationSDK
-from core import helpers
+from dietlyapiintegration_sdk.core import helpers
 from test import runner
 
 
@@ -56,16 +56,16 @@ def _meta_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "DIETLYAPIINTEGRATION_TEST_META_ENTID": {},
-        "DIETLYAPIINTEGRATION_TEST_LIVE": "FALSE",
-        "DIETLYAPIINTEGRATION_APIKEY": "NONE",
+        "DIETLYAPI_INTEGRATION_TEST_META_ENTID": {},
+        "DIETLYAPI_INTEGRATION_TEST_LIVE": "FALSE",
+        "DIETLYAPI_INTEGRATION_APIKEY": "NONE",
     })
 
-    live = env.get("DIETLYAPIINTEGRATION_TEST_LIVE") == "TRUE"
+    live = env.get("DIETLYAPI_INTEGRATION_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("DIETLYAPIINTEGRATION_APIKEY"),
+            "apikey": env.get("DIETLYAPI_INTEGRATION_APIKEY"),
         }
         client = DietlyapiIntegrationSDK(merged_opts)
         return {

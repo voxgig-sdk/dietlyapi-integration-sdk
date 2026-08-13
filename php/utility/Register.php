@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ DietlyapiIntegrationUtility::setRegistrar(function (DietlyapiIntegrationUtility 
     $u->prepare_params = [DietlyapiIntegrationPrepareParams::class, 'call'];
     $u->prepare_path = [DietlyapiIntegrationPreparePath::class, 'call'];
     $u->prepare_query = [DietlyapiIntegrationPrepareQuery::class, 'call'];
+    $u->graphql_body = [DietlyapiIntegrationGraphql::class, 'body'];
+    $u->graphql_errors = [DietlyapiIntegrationGraphql::class, 'errors'];
     $u->result_basic = [DietlyapiIntegrationResultBasic::class, 'call'];
     $u->result_body = [DietlyapiIntegrationResultBody::class, 'call'];
     $u->result_headers = [DietlyapiIntegrationResultHeaders::class, 'call'];

@@ -55,10 +55,10 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const barcode = await client.Barcode().load({ id: "example_id" })
-  console.log(barcode)
+  const searchs = await client.Search().list()
+  console.log(searchs)
 } catch (err) {
-  console.error('load failed:', err)
+  console.error('list failed:', err)
 }
 ```
 
@@ -122,9 +122,10 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = DietlyapiIntegrationSDK.test()
 
-const barcode = await client.Barcode().load({ id: 'test01' })
-// barcode is a bare entity populated with mock response data
-console.log(barcode)
+const search = await client.Search().list()
+// search is the entity, populated with mock response data
+// — call search.data() for the record itself
+console.log(search)
 ```
 
 You can also use the instance method:
@@ -139,10 +140,10 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Barcode()
+const entity = client.Search()
 
 // First call runs the operation and stores its result
-await entity.load({ id: 'example' })
+await entity.list()
 
 // Subsequent calls reuse the stored state
 const data = entity.data()
@@ -706,16 +707,16 @@ import { DietlyapiIntegrationSDK } from '@voxgig-sdk/dietlyapi-integration'
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const barcode = client.Barcode()
-await barcode.load({ id: "example_id" })
+const search = client.Search()
+await search.list()
 
-// barcode.data() now returns the barcode data from the last `load`
-// barcode.match() returns { id: "example_id" }
+// search.data() now returns the search data from the last `list`
+// search.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

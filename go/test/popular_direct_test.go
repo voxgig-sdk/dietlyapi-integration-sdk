@@ -36,9 +36,10 @@ func TestPopularDirect(t *testing.T) {
 			"params": map[string]any{},
 		})
 		if setup.live {
-			// Live mode is lenient: synthetic IDs frequently 4xx and the
-			// list-response shape varies wildly across public APIs. Skip
-			// rather than fail when the call doesn't return a usable list.
+			// Live-mode leniency is a model decision
+			// (main.kit.test.live.strict): synthetic IDs 4xx constantly
+			// against an arbitrary public API, so the default SKIPS here.
+			// A project that owns its test server sets strict and FAILS.
 			if err != nil {
 				t.Skipf("list call failed (likely synthetic IDs against live API): %v", err)
 			}
@@ -91,21 +92,21 @@ func popularDirectSetup(mockres any) *popularDirectSetupResult {
 	calls := &[]map[string]any{}
 
 	env := envOverride(map[string]any{
-		"DIETLYAPIINTEGRATION_TEST_POPULAR_ENTID": map[string]any{},
-		"DIETLYAPIINTEGRATION_TEST_LIVE":    "FALSE",
-		"DIETLYAPIINTEGRATION_APIKEY":       "NONE",
+		"DIETLYAPI_INTEGRATION_TEST_POPULAR_ENTID": map[string]any{},
+		"DIETLYAPI_INTEGRATION_TEST_LIVE":    "FALSE",
+		"DIETLYAPI_INTEGRATION_APIKEY":       "NONE",
 	})
 
-	live := env["DIETLYAPIINTEGRATION_TEST_LIVE"] == "TRUE"
+	live := env["DIETLYAPI_INTEGRATION_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["DIETLYAPIINTEGRATION_APIKEY"],
+			"apikey": env["DIETLYAPI_INTEGRATION_APIKEY"],
 		}
 		client := sdk.NewDietlyapiIntegrationSDK(mergedOpts)
 
 		idmap := map[string]any{}
-		if entidRaw, ok := env["DIETLYAPIINTEGRATION_TEST_POPULAR_ENTID"]; ok {
+		if entidRaw, ok := env["DIETLYAPI_INTEGRATION_TEST_POPULAR_ENTID"]; ok {
 			if entidStr, ok := entidRaw.(string); ok && strings.HasPrefix(entidStr, "{") {
 				json.Unmarshal([]byte(entidStr), &idmap)
 			} else if entidMap, ok := entidRaw.(map[string]any); ok {

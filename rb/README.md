@@ -36,7 +36,7 @@ client = DietlyapiIntegrationSDK.new({
 
 ```ruby
 begin
-  # load returns the bare Barcode record (raises on error).
+  # load returns the ENTITY — call data_get for the Barcode record (raises on error).
   barcode = client.Barcode.load({ "id" => "example_id" })
   puts barcode
 rescue => err
@@ -51,9 +51,9 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  barcode = client.Barcode.load({ "id" => "example_id" })
+  searchs = client.Search.list()
 rescue => err
-  warn "load failed: #{err}"
+  warn "list failed: #{err}"
 end
 ```
 
@@ -114,17 +114,15 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```ruby
-client = DietlyapiIntegrationSDK.test({
-  "entity" => { "barcode" => { "test01" => { "id" => "test01" } } },
-})
+client = DietlyapiIntegrationSDK.test
 
-# Entity ops return the bare mock record (raises on error).
-barcode = client.Barcode.load({ "id" => "test01" })
-puts barcode
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
+search = client.Search.list()
+puts search
 ```
 
 ### Use a custom fetch function
@@ -423,7 +421,7 @@ Create an instance: `barcode = client.Barcode`
 #### Example: Load
 
 ```ruby
-# load returns the bare Barcode record (raises on error).
+# load returns the ENTITY — call data_get for the Barcode record (raises on error).
 barcode = client.Barcode.load({ "id" => "barcode_id" })
 ```
 
@@ -470,7 +468,7 @@ Create an instance: `food = client.Food`
 #### Example: Load
 
 ```ruby
-# load returns the bare Food record (raises on error).
+# load returns the ENTITY — call data_get for the Food record (raises on error).
 food = client.Food.load({ "id" => 1 })
 ```
 
@@ -502,7 +500,7 @@ Create an instance: `meta = client.Meta`
 #### Example: Load
 
 ```ruby
-# load returns the bare Meta record (raises on error).
+# load returns the ENTITY — call data_get for the Meta record (raises on error).
 meta = client.Meta.load()
 ```
 
@@ -669,15 +667,15 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-barcode = client.Barcode
-barcode.load({ "id" => "example_id" })
+search = client.Search
+search.list()
 
-# barcode.data_get now returns the barcode data from the last load
-# barcode.match_get returns the last match criteria
+# search.data_get now returns the search data from the last list
+# search.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

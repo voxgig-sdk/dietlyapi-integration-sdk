@@ -67,16 +67,16 @@ def barcode_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "DIETLYAPIINTEGRATION_TEST_BARCODE_ENTID" => {},
-    "DIETLYAPIINTEGRATION_TEST_LIVE" => "FALSE",
-    "DIETLYAPIINTEGRATION_APIKEY" => "NONE",
+    "DIETLYAPI_INTEGRATION_TEST_BARCODE_ENTID" => {},
+    "DIETLYAPI_INTEGRATION_TEST_LIVE" => "FALSE",
+    "DIETLYAPI_INTEGRATION_APIKEY" => "NONE",
   })
 
-  live = env["DIETLYAPIINTEGRATION_TEST_LIVE"] == "TRUE"
+  live = env["DIETLYAPI_INTEGRATION_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["DIETLYAPIINTEGRATION_APIKEY"],
+      "apikey" => env["DIETLYAPI_INTEGRATION_APIKEY"],
     }
     client = DietlyapiIntegrationSDK.new(merged_opts)
     return {

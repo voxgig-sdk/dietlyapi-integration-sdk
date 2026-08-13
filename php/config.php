@@ -214,6 +214,7 @@ class DietlyapiIntegrationConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/barcode/{code}',
                   'parts' => [
@@ -417,6 +418,7 @@ class DietlyapiIntegrationConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/foods/categories',
                   'parts' => [
@@ -455,6 +457,7 @@ class DietlyapiIntegrationConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/food/{food_id}',
                   'parts' => [
@@ -511,6 +514,7 @@ class DietlyapiIntegrationConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/health',
                   'parts' => [
@@ -735,6 +739,7 @@ class DietlyapiIntegrationConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/foods/popular',
                   'parts' => [
@@ -958,6 +963,7 @@ class DietlyapiIntegrationConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/search',
                   'parts' => [

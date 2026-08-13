@@ -113,16 +113,16 @@ function food_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["DIETLYAPIINTEGRATION_TEST_FOOD_ENTID"] = {},
-    ["DIETLYAPIINTEGRATION_TEST_LIVE"] = "FALSE",
-    ["DIETLYAPIINTEGRATION_APIKEY"] = "NONE",
+    ["DIETLYAPI_INTEGRATION_TEST_FOOD_ENTID"] = {},
+    ["DIETLYAPI_INTEGRATION_TEST_LIVE"] = "FALSE",
+    ["DIETLYAPI_INTEGRATION_APIKEY"] = "NONE",
   })
 
-  local live = env["DIETLYAPIINTEGRATION_TEST_LIVE"] == "TRUE"
+  local live = env["DIETLYAPI_INTEGRATION_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["DIETLYAPIINTEGRATION_APIKEY"],
+      apikey = env["DIETLYAPI_INTEGRATION_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

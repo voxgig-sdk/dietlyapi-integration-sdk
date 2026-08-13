@@ -88,6 +88,12 @@ export interface FoodListMatch {
   source?: string
   static_url?: string
   sugar_g?: number
+
+  // Selects a custom action instead of the plain list:
+  //   'category'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 
 export interface Meta {

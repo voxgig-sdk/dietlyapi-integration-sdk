@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'DietlyapiIntegration',
   }
 
 
@@ -247,6 +247,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/barcode/{code}",
               "parts": [
@@ -450,6 +451,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/foods/categories",
               "parts": [
@@ -488,6 +490,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/food/{food_id}",
               "parts": [
@@ -544,6 +547,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/health",
               "parts": [
@@ -768,6 +772,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/foods/popular",
               "parts": [
@@ -991,6 +996,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/search",
               "parts": [

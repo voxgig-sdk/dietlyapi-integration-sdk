@@ -26,8 +26,8 @@ import {
 describe('FoodEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DIETLYAPIINTEGRATION_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DIETLYAPIINTEGRATION_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DIETLYAPI_INTEGRATION_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DIETLYAPI_INTEGRATION_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = DietlyapiIntegrationSDK.test()
@@ -63,13 +63,13 @@ describe('FoodEntity', async () => {
     const food_ref01_ent = client.Food()
     const food_ref01_match: any = {}
 
-    const food_ref01_list = await food_ref01_ent.list(food_ref01_match)
+    const food_ref01_list = (await food_ref01_ent.list(food_ref01_match)).map((e: any) => e.data())
 
 
     // LOAD
     const food_ref01_match_dt0: any = {}
     food_ref01_match_dt0.id = food_ref01_data.id
-    const food_ref01_data_dt0 = await food_ref01_ent.load(food_ref01_match_dt0)
+    const food_ref01_data_dt0 = (await food_ref01_ent.load(food_ref01_match_dt0)).data()
     assert(food_ref01_data_dt0.id === food_ref01_data.id)
 
 

@@ -16,11 +16,11 @@
 import pytest
 
 from dietlyapiintegration_sdk import DietlyapiIntegrationSDK
-from core.error import DietlyapiIntegrationError
-from core.result import DietlyapiIntegrationResult
-from core.response import DietlyapiIntegrationResponse
-from core.spec import DietlyapiIntegrationSpec
-from feature.base_feature import DietlyapiIntegrationBaseFeature
+from dietlyapiintegration_sdk.core.error import DietlyapiIntegrationError
+from dietlyapiintegration_sdk.core.result import DietlyapiIntegrationResult
+from dietlyapiintegration_sdk.core.response import DietlyapiIntegrationResponse
+from dietlyapiintegration_sdk.core.spec import DietlyapiIntegrationSpec
+from dietlyapiintegration_sdk.feature.base_feature import DietlyapiIntegrationBaseFeature
 
 
 def _client():

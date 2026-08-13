@@ -260,6 +260,26 @@ const food = client.Food()
 | `static_url` | `string` | No |  |
 | `sugar_g` | `number` | No |  |
 
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `category` | `/foods/categories` | `client.Food().list({ $action: 'category', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Food record — check the API definition for its shape.
+
+```ts
+const result = await client.Food().list({
+  $action: 'category',
+  /* ...the action's own arguments */
+})
+```
+
 ### Operations
 
 #### `list(match: object, ctrl?: object)`

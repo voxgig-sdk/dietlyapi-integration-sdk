@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# DietlyapiIntegration SDK exists test
 
 import pytest
 from dietlyapiintegration_sdk import DietlyapiIntegrationSDK

@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ DietlyapiIntegrationUtility.registrar = ->(u) {
   u.prepare_params = DietlyapiIntegrationUtilities::PrepareParams
   u.prepare_path = DietlyapiIntegrationUtilities::PreparePath
   u.prepare_query = DietlyapiIntegrationUtilities::PrepareQuery
+  u.graphql_body = DietlyapiIntegrationUtilities::GraphqlBody
+  u.graphql_errors = DietlyapiIntegrationUtilities::GraphqlErrors
   u.result_basic = DietlyapiIntegrationUtilities::ResultBasic
   u.result_body = DietlyapiIntegrationUtilities::ResultBody
   u.result_headers = DietlyapiIntegrationUtilities::ResultHeaders
