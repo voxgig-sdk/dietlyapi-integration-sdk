@@ -28,7 +28,7 @@ class DietlyapiIntegrationSDK
     utility = DietlyapiIntegrationUtility.new
     @_utility = utility
 
-    config = DietlyapiIntegrationConfig.make_config
+    config = DietlyapiIntegrationConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

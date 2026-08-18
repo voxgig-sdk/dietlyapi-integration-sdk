@@ -23,7 +23,7 @@ func NewDietlyapiIntegrationSDK(options map[string]any) *DietlyapiIntegrationSDK
 
 	sdk.utility = NewUtility()
 
-	config := MakeConfig()
+	config := SharedConfig()
 
 	sdk.rootctx = sdk.utility.MakeContext(map[string]any{
 		"client":  sdk,

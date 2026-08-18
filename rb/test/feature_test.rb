@@ -15,7 +15,7 @@ require_relative "../DietlyapiIntegration_sdk"
 module DietlyapiIntegrationFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = DietlyapiIntegrationConfig.make_config["feature"]
+    f = DietlyapiIntegrationConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

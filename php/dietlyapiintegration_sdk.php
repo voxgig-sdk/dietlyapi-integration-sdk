@@ -40,7 +40,7 @@ class DietlyapiIntegrationSDK
         $utility = new DietlyapiIntegrationUtility();
         $this->_utility = $utility;
 
-        $config = DietlyapiIntegrationConfig::make_config();
+        $config = DietlyapiIntegrationConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
