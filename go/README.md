@@ -6,7 +6,7 @@ The Golang SDK for the DietlyapiIntegration API — an entity-oriented client us
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Barcode(nil)` — each with the same small set of operations (`List`, `Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -271,26 +271,26 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | --- | --- |
 | `"barcode"` |  |
 | `"brand"` |  |
-| `"calories_kcal"` |  |
-| `"carbs_g"` |  |
+| `"calories_kcal"` | Energy in kcal per 100 g |
+| `"carbs_g"` | Carbohydrate in grams per 100 g |
 | `"category"` |  |
-| `"cholesterol_mg"` |  |
-| `"confidence"` |  |
-| `"fat_g"` |  |
-| `"fiber_g"` |  |
+| `"cholesterol_mg"` | Cholesterol in mg per 100 g |
+| `"confidence"` | Data confidence score, 0–1 |
+| `"fat_g"` | Total fat in grams per 100 g |
+| `"fiber_g"` | Fibre in grams per 100 g |
 | `"id"` |  |
 | `"image_thumb_url"` |  |
 | `"image_url"` |  |
 | `"name"` |  |
-| `"potassium_mg"` |  |
-| `"protein_g"` |  |
-| `"saturated_fat_g"` |  |
-| `"serving_desc"` |  |
-| `"serving_size_g"` |  |
-| `"sodium_mg"` |  |
-| `"source"` |  |
-| `"static_url"` |  |
-| `"sugar_g"` |  |
+| `"potassium_mg"` | Potassium in mg per 100 g |
+| `"protein_g"` | Protein in grams per 100 g |
+| `"saturated_fat_g"` | Saturated fat in grams per 100 g |
+| `"serving_desc"` | Human-readable label for one serving, e.g. |
+| `"serving_size_g"` | Grams in one manufacturer serving, where the source declares one. |
+| `"sodium_mg"` | Sodium in mg per 100 g |
+| `"source"` | Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community |
+| `"static_url"` | Path of the human-readable page on www.getdietly.com |
+| `"sugar_g"` | Sugars in grams per 100 g |
 
 Operations: Load.
 
@@ -302,27 +302,27 @@ API path: `/barcode/{code}`
 | --- | --- |
 | `"barcode"` |  |
 | `"brand"` |  |
-| `"calories_kcal"` |  |
-| `"carbs_g"` |  |
+| `"calories_kcal"` | Energy in kcal per 100 g |
+| `"carbs_g"` | Carbohydrate in grams per 100 g |
 | `"category"` |  |
-| `"cholesterol_mg"` |  |
-| `"confidence"` |  |
+| `"cholesterol_mg"` | Cholesterol in mg per 100 g |
+| `"confidence"` | Data confidence score, 0–1 |
 | `"count"` |  |
-| `"fat_g"` |  |
-| `"fiber_g"` |  |
+| `"fat_g"` | Total fat in grams per 100 g |
+| `"fiber_g"` | Fibre in grams per 100 g |
 | `"id"` |  |
 | `"image_thumb_url"` |  |
 | `"image_url"` |  |
 | `"name"` |  |
-| `"potassium_mg"` |  |
-| `"protein_g"` |  |
-| `"saturated_fat_g"` |  |
-| `"serving_desc"` |  |
-| `"serving_size_g"` |  |
-| `"sodium_mg"` |  |
-| `"source"` |  |
-| `"static_url"` |  |
-| `"sugar_g"` |  |
+| `"potassium_mg"` | Potassium in mg per 100 g |
+| `"protein_g"` | Protein in grams per 100 g |
+| `"saturated_fat_g"` | Saturated fat in grams per 100 g |
+| `"serving_desc"` | Human-readable label for one serving, e.g. |
+| `"serving_size_g"` | Grams in one manufacturer serving, where the source declares one. |
+| `"sodium_mg"` | Sodium in mg per 100 g |
+| `"source"` | Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community |
+| `"static_url"` | Path of the human-readable page on www.getdietly.com |
+| `"sugar_g"` | Sugars in grams per 100 g |
 
 Operations: List, Load.
 
@@ -345,26 +345,26 @@ API path: `/health`
 | --- | --- |
 | `"barcode"` |  |
 | `"brand"` |  |
-| `"calories_kcal"` |  |
-| `"carbs_g"` |  |
+| `"calories_kcal"` | Energy in kcal per 100 g |
+| `"carbs_g"` | Carbohydrate in grams per 100 g |
 | `"category"` |  |
-| `"cholesterol_mg"` |  |
-| `"confidence"` |  |
-| `"fat_g"` |  |
-| `"fiber_g"` |  |
+| `"cholesterol_mg"` | Cholesterol in mg per 100 g |
+| `"confidence"` | Data confidence score, 0–1 |
+| `"fat_g"` | Total fat in grams per 100 g |
+| `"fiber_g"` | Fibre in grams per 100 g |
 | `"id"` |  |
 | `"image_thumb_url"` |  |
 | `"image_url"` |  |
 | `"name"` |  |
-| `"potassium_mg"` |  |
-| `"protein_g"` |  |
-| `"saturated_fat_g"` |  |
-| `"serving_desc"` |  |
-| `"serving_size_g"` |  |
-| `"sodium_mg"` |  |
-| `"source"` |  |
-| `"static_url"` |  |
-| `"sugar_g"` |  |
+| `"potassium_mg"` | Potassium in mg per 100 g |
+| `"protein_g"` | Protein in grams per 100 g |
+| `"saturated_fat_g"` | Saturated fat in grams per 100 g |
+| `"serving_desc"` | Human-readable label for one serving, e.g. |
+| `"serving_size_g"` | Grams in one manufacturer serving, where the source declares one. |
+| `"sodium_mg"` | Sodium in mg per 100 g |
+| `"source"` | Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community |
+| `"static_url"` | Path of the human-readable page on www.getdietly.com |
+| `"sugar_g"` | Sugars in grams per 100 g |
 
 Operations: List.
 
@@ -376,26 +376,26 @@ API path: `/foods/popular`
 | --- | --- |
 | `"barcode"` |  |
 | `"brand"` |  |
-| `"calories_kcal"` |  |
-| `"carbs_g"` |  |
+| `"calories_kcal"` | Energy in kcal per 100 g |
+| `"carbs_g"` | Carbohydrate in grams per 100 g |
 | `"category"` |  |
-| `"cholesterol_mg"` |  |
-| `"confidence"` |  |
-| `"fat_g"` |  |
-| `"fiber_g"` |  |
+| `"cholesterol_mg"` | Cholesterol in mg per 100 g |
+| `"confidence"` | Data confidence score, 0–1 |
+| `"fat_g"` | Total fat in grams per 100 g |
+| `"fiber_g"` | Fibre in grams per 100 g |
 | `"id"` |  |
 | `"image_thumb_url"` |  |
 | `"image_url"` |  |
 | `"name"` |  |
-| `"potassium_mg"` |  |
-| `"protein_g"` |  |
-| `"saturated_fat_g"` |  |
-| `"serving_desc"` |  |
-| `"serving_size_g"` |  |
-| `"sodium_mg"` |  |
-| `"source"` |  |
-| `"static_url"` |  |
-| `"sugar_g"` |  |
+| `"potassium_mg"` | Potassium in mg per 100 g |
+| `"protein_g"` | Protein in grams per 100 g |
+| `"saturated_fat_g"` | Saturated fat in grams per 100 g |
+| `"serving_desc"` | Human-readable label for one serving, e.g. |
+| `"serving_size_g"` | Grams in one manufacturer serving, where the source declares one. |
+| `"sodium_mg"` | Sodium in mg per 100 g |
+| `"source"` | Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community |
+| `"static_url"` | Path of the human-readable page on www.getdietly.com |
+| `"sugar_g"` | Sugars in grams per 100 g |
 
 Operations: List.
 
@@ -422,26 +422,26 @@ Create an instance: `barcode := client.Barcode(nil)`
 | --- | --- | --- |
 | `barcode` | `string` |  |
 | `brand` | `string` |  |
-| `calories_kcal` | `float64` |  |
-| `carbs_g` | `float64` |  |
+| `calories_kcal` | `float64` | Energy in kcal per 100 g |
+| `carbs_g` | `float64` | Carbohydrate in grams per 100 g |
 | `category` | `string` |  |
-| `cholesterol_mg` | `float64` |  |
-| `confidence` | `float64` |  |
-| `fat_g` | `float64` |  |
-| `fiber_g` | `float64` |  |
+| `cholesterol_mg` | `float64` | Cholesterol in mg per 100 g |
+| `confidence` | `float64` | Data confidence score, 0–1 |
+| `fat_g` | `float64` | Total fat in grams per 100 g |
+| `fiber_g` | `float64` | Fibre in grams per 100 g |
 | `id` | `int` |  |
 | `image_thumb_url` | `string` |  |
 | `image_url` | `string` |  |
 | `name` | `string` |  |
-| `potassium_mg` | `float64` |  |
-| `protein_g` | `float64` |  |
-| `saturated_fat_g` | `float64` |  |
-| `serving_desc` | `string` |  |
-| `serving_size_g` | `float64` |  |
-| `sodium_mg` | `float64` |  |
-| `source` | `string` |  |
-| `static_url` | `string` |  |
-| `sugar_g` | `float64` |  |
+| `potassium_mg` | `float64` | Potassium in mg per 100 g |
+| `protein_g` | `float64` | Protein in grams per 100 g |
+| `saturated_fat_g` | `float64` | Saturated fat in grams per 100 g |
+| `serving_desc` | `string` | Human-readable label for one serving, e.g. |
+| `serving_size_g` | `float64` | Grams in one manufacturer serving, where the source declares one. |
+| `sodium_mg` | `float64` | Sodium in mg per 100 g |
+| `source` | `string` | Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community |
+| `static_url` | `string` | Path of the human-readable page on www.getdietly.com |
+| `sugar_g` | `float64` | Sugars in grams per 100 g |
 
 #### Example: Load
 
@@ -471,27 +471,27 @@ Create an instance: `food := client.Food(nil)`
 | --- | --- | --- |
 | `barcode` | `string` |  |
 | `brand` | `string` |  |
-| `calories_kcal` | `float64` |  |
-| `carbs_g` | `float64` |  |
+| `calories_kcal` | `float64` | Energy in kcal per 100 g |
+| `carbs_g` | `float64` | Carbohydrate in grams per 100 g |
 | `category` | `string` |  |
-| `cholesterol_mg` | `float64` |  |
-| `confidence` | `float64` |  |
+| `cholesterol_mg` | `float64` | Cholesterol in mg per 100 g |
+| `confidence` | `float64` | Data confidence score, 0–1 |
 | `count` | `int` |  |
-| `fat_g` | `float64` |  |
-| `fiber_g` | `float64` |  |
+| `fat_g` | `float64` | Total fat in grams per 100 g |
+| `fiber_g` | `float64` | Fibre in grams per 100 g |
 | `id` | `int` |  |
 | `image_thumb_url` | `string` |  |
 | `image_url` | `string` |  |
 | `name` | `string` |  |
-| `potassium_mg` | `float64` |  |
-| `protein_g` | `float64` |  |
-| `saturated_fat_g` | `float64` |  |
-| `serving_desc` | `string` |  |
-| `serving_size_g` | `float64` |  |
-| `sodium_mg` | `float64` |  |
-| `source` | `string` |  |
-| `static_url` | `string` |  |
-| `sugar_g` | `float64` |  |
+| `potassium_mg` | `float64` | Potassium in mg per 100 g |
+| `protein_g` | `float64` | Protein in grams per 100 g |
+| `saturated_fat_g` | `float64` | Saturated fat in grams per 100 g |
+| `serving_desc` | `string` | Human-readable label for one serving, e.g. |
+| `serving_size_g` | `float64` | Grams in one manufacturer serving, where the source declares one. |
+| `sodium_mg` | `float64` | Sodium in mg per 100 g |
+| `source` | `string` | Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community |
+| `static_url` | `string` | Path of the human-readable page on www.getdietly.com |
+| `sugar_g` | `float64` | Sugars in grams per 100 g |
 
 #### Example: Load
 
@@ -558,26 +558,26 @@ Create an instance: `popular := client.Popular(nil)`
 | --- | --- | --- |
 | `barcode` | `string` |  |
 | `brand` | `string` |  |
-| `calories_kcal` | `float64` |  |
-| `carbs_g` | `float64` |  |
+| `calories_kcal` | `float64` | Energy in kcal per 100 g |
+| `carbs_g` | `float64` | Carbohydrate in grams per 100 g |
 | `category` | `string` |  |
-| `cholesterol_mg` | `float64` |  |
-| `confidence` | `float64` |  |
-| `fat_g` | `float64` |  |
-| `fiber_g` | `float64` |  |
+| `cholesterol_mg` | `float64` | Cholesterol in mg per 100 g |
+| `confidence` | `float64` | Data confidence score, 0–1 |
+| `fat_g` | `float64` | Total fat in grams per 100 g |
+| `fiber_g` | `float64` | Fibre in grams per 100 g |
 | `id` | `int` |  |
 | `image_thumb_url` | `string` |  |
 | `image_url` | `string` |  |
 | `name` | `string` |  |
-| `potassium_mg` | `float64` |  |
-| `protein_g` | `float64` |  |
-| `saturated_fat_g` | `float64` |  |
-| `serving_desc` | `string` |  |
-| `serving_size_g` | `float64` |  |
-| `sodium_mg` | `float64` |  |
-| `source` | `string` |  |
-| `static_url` | `string` |  |
-| `sugar_g` | `float64` |  |
+| `potassium_mg` | `float64` | Potassium in mg per 100 g |
+| `protein_g` | `float64` | Protein in grams per 100 g |
+| `saturated_fat_g` | `float64` | Saturated fat in grams per 100 g |
+| `serving_desc` | `string` | Human-readable label for one serving, e.g. |
+| `serving_size_g` | `float64` | Grams in one manufacturer serving, where the source declares one. |
+| `sodium_mg` | `float64` | Sodium in mg per 100 g |
+| `source` | `string` | Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community |
+| `static_url` | `string` | Path of the human-readable page on www.getdietly.com |
+| `sugar_g` | `float64` | Sugars in grams per 100 g |
 
 #### Example: List
 
@@ -606,26 +606,26 @@ Create an instance: `search := client.Search(nil)`
 | --- | --- | --- |
 | `barcode` | `string` |  |
 | `brand` | `string` |  |
-| `calories_kcal` | `float64` |  |
-| `carbs_g` | `float64` |  |
+| `calories_kcal` | `float64` | Energy in kcal per 100 g |
+| `carbs_g` | `float64` | Carbohydrate in grams per 100 g |
 | `category` | `string` |  |
-| `cholesterol_mg` | `float64` |  |
-| `confidence` | `float64` |  |
-| `fat_g` | `float64` |  |
-| `fiber_g` | `float64` |  |
+| `cholesterol_mg` | `float64` | Cholesterol in mg per 100 g |
+| `confidence` | `float64` | Data confidence score, 0–1 |
+| `fat_g` | `float64` | Total fat in grams per 100 g |
+| `fiber_g` | `float64` | Fibre in grams per 100 g |
 | `id` | `int` |  |
 | `image_thumb_url` | `string` |  |
 | `image_url` | `string` |  |
 | `name` | `string` |  |
-| `potassium_mg` | `float64` |  |
-| `protein_g` | `float64` |  |
-| `saturated_fat_g` | `float64` |  |
-| `serving_desc` | `string` |  |
-| `serving_size_g` | `float64` |  |
-| `sodium_mg` | `float64` |  |
-| `source` | `string` |  |
-| `static_url` | `string` |  |
-| `sugar_g` | `float64` |  |
+| `potassium_mg` | `float64` | Potassium in mg per 100 g |
+| `protein_g` | `float64` | Protein in grams per 100 g |
+| `saturated_fat_g` | `float64` | Saturated fat in grams per 100 g |
+| `serving_desc` | `string` | Human-readable label for one serving, e.g. |
+| `serving_size_g` | `float64` | Grams in one manufacturer serving, where the source declares one. |
+| `sodium_mg` | `float64` | Sodium in mg per 100 g |
+| `source` | `string` | Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community |
+| `static_url` | `string` | Path of the human-readable page on www.getdietly.com |
+| `sugar_g` | `float64` | Sugars in grams per 100 g |
 
 #### Example: List
 

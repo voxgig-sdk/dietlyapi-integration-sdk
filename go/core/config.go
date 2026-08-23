@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "DietlyapiIntegration",
+			"slug": "dietlyapi-integration",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -48,10 +51,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "calories_kcal",
+						"short": "Energy in kcal per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "carbs_g",
+						"short": "Carbohydrate in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
@@ -60,18 +65,22 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "cholesterol_mg",
+						"short": "Cholesterol in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "confidence",
+						"short": "Data confidence score, 0–1",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "fat_g",
+						"short": "Total fat in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "fiber_g",
+						"short": "Fibre in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
@@ -92,38 +101,47 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "potassium_mg",
+						"short": "Potassium in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "protein_g",
+						"short": "Protein in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "saturated_fat_g",
+						"short": "Saturated fat in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "serving_desc",
+						"short": "Human-readable label for one serving, e.g.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "serving_size_g",
+						"short": "Grams in one manufacturer serving, where the source declares one.",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "sodium_mg",
+						"short": "Sodium in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "source",
+						"short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "static_url",
+						"short": "Path of the human-readable page on www.getdietly.com",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "sugar_g",
+						"short": "Sugars in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 				},
@@ -187,10 +205,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "calories_kcal",
+						"short": "Energy in kcal per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "carbs_g",
+						"short": "Carbohydrate in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
@@ -199,10 +219,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "cholesterol_mg",
+						"short": "Cholesterol in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "confidence",
+						"short": "Data confidence score, 0–1",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
@@ -211,10 +233,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "fat_g",
+						"short": "Total fat in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "fiber_g",
+						"short": "Fibre in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
@@ -235,38 +259,47 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "potassium_mg",
+						"short": "Potassium in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "protein_g",
+						"short": "Protein in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "saturated_fat_g",
+						"short": "Saturated fat in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "serving_desc",
+						"short": "Human-readable label for one serving, e.g.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "serving_size_g",
+						"short": "Grams in one manufacturer serving, where the source declares one.",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "sodium_mg",
+						"short": "Sodium in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "source",
+						"short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "static_url",
+						"short": "Path of the human-readable page on www.getdietly.com",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "sugar_g",
+						"short": "Sugars in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 				},
@@ -391,10 +424,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "calories_kcal",
+						"short": "Energy in kcal per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "carbs_g",
+						"short": "Carbohydrate in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
@@ -403,18 +438,22 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "cholesterol_mg",
+						"short": "Cholesterol in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "confidence",
+						"short": "Data confidence score, 0–1",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "fat_g",
+						"short": "Total fat in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "fiber_g",
+						"short": "Fibre in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
@@ -435,38 +474,47 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "potassium_mg",
+						"short": "Potassium in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "protein_g",
+						"short": "Protein in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "saturated_fat_g",
+						"short": "Saturated fat in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "serving_desc",
+						"short": "Human-readable label for one serving, e.g.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "serving_size_g",
+						"short": "Grams in one manufacturer serving, where the source declares one.",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "sodium_mg",
+						"short": "Sodium in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "source",
+						"short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "static_url",
+						"short": "Path of the human-readable page on www.getdietly.com",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "sugar_g",
+						"short": "Sugars in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 				},
@@ -547,10 +595,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "calories_kcal",
+						"short": "Energy in kcal per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "carbs_g",
+						"short": "Carbohydrate in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
@@ -559,18 +609,22 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "cholesterol_mg",
+						"short": "Cholesterol in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "confidence",
+						"short": "Data confidence score, 0–1",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "fat_g",
+						"short": "Total fat in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "fiber_g",
+						"short": "Fibre in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
@@ -591,38 +645,47 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "potassium_mg",
+						"short": "Potassium in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "protein_g",
+						"short": "Protein in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "saturated_fat_g",
+						"short": "Saturated fat in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "serving_desc",
+						"short": "Human-readable label for one serving, e.g.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "serving_size_g",
+						"short": "Grams in one manufacturer serving, where the source declares one.",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "sodium_mg",
+						"short": "Sodium in mg per 100 g",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "source",
+						"short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "static_url",
+						"short": "Path of the human-readable page on www.getdietly.com",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "sugar_g",
+						"short": "Sugars in grams per 100 g",
 						"type": "`$NUMBER`",
 					},
 				},

@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'DietlyapiIntegration',
+        slug: "dietlyapi-integration",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -80,10 +91,12 @@ class Config {
         },
         {
           "name": "calories_kcal",
+          "short": "Energy in kcal per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "carbs_g",
+          "short": "Carbohydrate in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
@@ -92,18 +105,22 @@ class Config {
         },
         {
           "name": "cholesterol_mg",
+          "short": "Cholesterol in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "confidence",
+          "short": "Data confidence score, 0–1",
           "type": "`$NUMBER`"
         },
         {
           "name": "fat_g",
+          "short": "Total fat in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "fiber_g",
+          "short": "Fibre in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
@@ -124,38 +141,47 @@ class Config {
         },
         {
           "name": "potassium_mg",
+          "short": "Potassium in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "protein_g",
+          "short": "Protein in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "saturated_fat_g",
+          "short": "Saturated fat in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "serving_desc",
+          "short": "Human-readable label for one serving, e.g.",
           "type": "`$STRING`"
         },
         {
           "name": "serving_size_g",
+          "short": "Grams in one manufacturer serving, where the source declares one.",
           "type": "`$NUMBER`"
         },
         {
           "name": "sodium_mg",
+          "short": "Sodium in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "source",
+          "short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
           "type": "`$STRING`"
         },
         {
           "name": "static_url",
+          "short": "Path of the human-readable page on www.getdietly.com",
           "type": "`$STRING`"
         },
         {
           "name": "sugar_g",
+          "short": "Sugars in grams per 100 g",
           "type": "`$NUMBER`"
         }
       ],
@@ -219,10 +245,12 @@ class Config {
         },
         {
           "name": "calories_kcal",
+          "short": "Energy in kcal per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "carbs_g",
+          "short": "Carbohydrate in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
@@ -231,10 +259,12 @@ class Config {
         },
         {
           "name": "cholesterol_mg",
+          "short": "Cholesterol in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "confidence",
+          "short": "Data confidence score, 0–1",
           "type": "`$NUMBER`"
         },
         {
@@ -243,10 +273,12 @@ class Config {
         },
         {
           "name": "fat_g",
+          "short": "Total fat in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "fiber_g",
+          "short": "Fibre in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
@@ -267,38 +299,47 @@ class Config {
         },
         {
           "name": "potassium_mg",
+          "short": "Potassium in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "protein_g",
+          "short": "Protein in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "saturated_fat_g",
+          "short": "Saturated fat in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "serving_desc",
+          "short": "Human-readable label for one serving, e.g.",
           "type": "`$STRING`"
         },
         {
           "name": "serving_size_g",
+          "short": "Grams in one manufacturer serving, where the source declares one.",
           "type": "`$NUMBER`"
         },
         {
           "name": "sodium_mg",
+          "short": "Sodium in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "source",
+          "short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
           "type": "`$STRING`"
         },
         {
           "name": "static_url",
+          "short": "Path of the human-readable page on www.getdietly.com",
           "type": "`$STRING`"
         },
         {
           "name": "sugar_g",
+          "short": "Sugars in grams per 100 g",
           "type": "`$NUMBER`"
         }
       ],
@@ -423,10 +464,12 @@ class Config {
         },
         {
           "name": "calories_kcal",
+          "short": "Energy in kcal per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "carbs_g",
+          "short": "Carbohydrate in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
@@ -435,18 +478,22 @@ class Config {
         },
         {
           "name": "cholesterol_mg",
+          "short": "Cholesterol in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "confidence",
+          "short": "Data confidence score, 0–1",
           "type": "`$NUMBER`"
         },
         {
           "name": "fat_g",
+          "short": "Total fat in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "fiber_g",
+          "short": "Fibre in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
@@ -467,38 +514,47 @@ class Config {
         },
         {
           "name": "potassium_mg",
+          "short": "Potassium in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "protein_g",
+          "short": "Protein in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "saturated_fat_g",
+          "short": "Saturated fat in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "serving_desc",
+          "short": "Human-readable label for one serving, e.g.",
           "type": "`$STRING`"
         },
         {
           "name": "serving_size_g",
+          "short": "Grams in one manufacturer serving, where the source declares one.",
           "type": "`$NUMBER`"
         },
         {
           "name": "sodium_mg",
+          "short": "Sodium in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "source",
+          "short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
           "type": "`$STRING`"
         },
         {
           "name": "static_url",
+          "short": "Path of the human-readable page on www.getdietly.com",
           "type": "`$STRING`"
         },
         {
           "name": "sugar_g",
+          "short": "Sugars in grams per 100 g",
           "type": "`$NUMBER`"
         }
       ],
@@ -579,10 +635,12 @@ class Config {
         },
         {
           "name": "calories_kcal",
+          "short": "Energy in kcal per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "carbs_g",
+          "short": "Carbohydrate in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
@@ -591,18 +649,22 @@ class Config {
         },
         {
           "name": "cholesterol_mg",
+          "short": "Cholesterol in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "confidence",
+          "short": "Data confidence score, 0–1",
           "type": "`$NUMBER`"
         },
         {
           "name": "fat_g",
+          "short": "Total fat in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "fiber_g",
+          "short": "Fibre in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
@@ -623,38 +685,47 @@ class Config {
         },
         {
           "name": "potassium_mg",
+          "short": "Potassium in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "protein_g",
+          "short": "Protein in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "saturated_fat_g",
+          "short": "Saturated fat in grams per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "serving_desc",
+          "short": "Human-readable label for one serving, e.g.",
           "type": "`$STRING`"
         },
         {
           "name": "serving_size_g",
+          "short": "Grams in one manufacturer serving, where the source declares one.",
           "type": "`$NUMBER`"
         },
         {
           "name": "sodium_mg",
+          "short": "Sodium in mg per 100 g",
           "type": "`$NUMBER`"
         },
         {
           "name": "source",
+          "short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
           "type": "`$STRING`"
         },
         {
           "name": "static_url",
+          "short": "Path of the human-readable page on www.getdietly.com",
           "type": "`$STRING`"
         },
         {
           "name": "sugar_g",
+          "short": "Sugars in grams per 100 g",
           "type": "`$NUMBER`"
         }
       ],

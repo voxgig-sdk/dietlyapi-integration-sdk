@@ -48,12 +48,14 @@
               "active": true,
               "name": "calories_kcal",
               "req": false,
+              "short": "Energy in kcal per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "carbs_g",
               "req": false,
+              "short": "Carbohydrate in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
@@ -66,24 +68,28 @@
               "active": true,
               "name": "cholesterol_mg",
               "req": false,
+              "short": "Cholesterol in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "confidence",
               "req": false,
+              "short": "Data confidence score, 0–1",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "fat_g",
               "req": false,
+              "short": "Total fat in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "fiber_g",
               "req": false,
+              "short": "Fibre in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
@@ -114,54 +120,63 @@
               "active": true,
               "name": "potassium_mg",
               "req": false,
+              "short": "Potassium in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "protein_g",
               "req": false,
+              "short": "Protein in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "saturated_fat_g",
               "req": false,
+              "short": "Saturated fat in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "serving_desc",
               "req": false,
+              "short": "Human-readable label for one serving, e.g.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "serving_size_g",
               "req": false,
+              "short": "Grams in one manufacturer serving, where the source declares one.",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "sodium_mg",
               "req": false,
+              "short": "Sodium in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "source",
               "req": false,
+              "short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "static_url",
               "req": false,
+              "short": "Path of the human-readable page on www.getdietly.com",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "sugar_g",
               "req": false,
+              "short": "Sugars in grams per 100 g",
               "type": "`$NUMBER`"
             }
           ],
@@ -241,12 +256,14 @@
               "active": true,
               "name": "calories_kcal",
               "req": false,
+              "short": "Energy in kcal per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "carbs_g",
               "req": false,
+              "short": "Carbohydrate in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
@@ -259,12 +276,14 @@
               "active": true,
               "name": "cholesterol_mg",
               "req": false,
+              "short": "Cholesterol in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "confidence",
               "req": false,
+              "short": "Data confidence score, 0–1",
               "type": "`$NUMBER`"
             },
             {
@@ -277,12 +296,14 @@
               "active": true,
               "name": "fat_g",
               "req": false,
+              "short": "Total fat in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "fiber_g",
               "req": false,
+              "short": "Fibre in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
@@ -313,54 +334,63 @@
               "active": true,
               "name": "potassium_mg",
               "req": false,
+              "short": "Potassium in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "protein_g",
               "req": false,
+              "short": "Protein in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "saturated_fat_g",
               "req": false,
+              "short": "Saturated fat in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "serving_desc",
               "req": false,
+              "short": "Human-readable label for one serving, e.g.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "serving_size_g",
               "req": false,
+              "short": "Grams in one manufacturer serving, where the source declares one.",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "sodium_mg",
               "req": false,
+              "short": "Sodium in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "source",
               "req": false,
+              "short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "static_url",
               "req": false,
+              "short": "Path of the human-readable page on www.getdietly.com",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "sugar_g",
               "req": false,
+              "short": "Sugars in grams per 100 g",
               "type": "`$NUMBER`"
             }
           ],
@@ -511,12 +541,14 @@
               "active": true,
               "name": "calories_kcal",
               "req": false,
+              "short": "Energy in kcal per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "carbs_g",
               "req": false,
+              "short": "Carbohydrate in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
@@ -529,24 +561,28 @@
               "active": true,
               "name": "cholesterol_mg",
               "req": false,
+              "short": "Cholesterol in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "confidence",
               "req": false,
+              "short": "Data confidence score, 0–1",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "fat_g",
               "req": false,
+              "short": "Total fat in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "fiber_g",
               "req": false,
+              "short": "Fibre in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
@@ -577,54 +613,63 @@
               "active": true,
               "name": "potassium_mg",
               "req": false,
+              "short": "Potassium in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "protein_g",
               "req": false,
+              "short": "Protein in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "saturated_fat_g",
               "req": false,
+              "short": "Saturated fat in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "serving_desc",
               "req": false,
+              "short": "Human-readable label for one serving, e.g.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "serving_size_g",
               "req": false,
+              "short": "Grams in one manufacturer serving, where the source declares one.",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "sodium_mg",
               "req": false,
+              "short": "Sodium in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "source",
               "req": false,
+              "short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "static_url",
               "req": false,
+              "short": "Path of the human-readable page on www.getdietly.com",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "sugar_g",
               "req": false,
+              "short": "Sugars in grams per 100 g",
               "type": "`$NUMBER`"
             }
           ],
@@ -728,12 +773,14 @@
               "active": true,
               "name": "calories_kcal",
               "req": false,
+              "short": "Energy in kcal per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "carbs_g",
               "req": false,
+              "short": "Carbohydrate in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
@@ -746,24 +793,28 @@
               "active": true,
               "name": "cholesterol_mg",
               "req": false,
+              "short": "Cholesterol in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "confidence",
               "req": false,
+              "short": "Data confidence score, 0–1",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "fat_g",
               "req": false,
+              "short": "Total fat in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "fiber_g",
               "req": false,
+              "short": "Fibre in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
@@ -794,54 +845,63 @@
               "active": true,
               "name": "potassium_mg",
               "req": false,
+              "short": "Potassium in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "protein_g",
               "req": false,
+              "short": "Protein in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "saturated_fat_g",
               "req": false,
+              "short": "Saturated fat in grams per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "serving_desc",
               "req": false,
+              "short": "Human-readable label for one serving, e.g.",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "serving_size_g",
               "req": false,
+              "short": "Grams in one manufacturer serving, where the source declares one.",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "sodium_mg",
               "req": false,
+              "short": "Sodium in mg per 100 g",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "source",
               "req": false,
+              "short": "Data source: off (Open Food Facts), usda (USDA FoodData Central), claude (labeled AI estimate) or community",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "static_url",
               "req": false,
+              "short": "Path of the human-readable page on www.getdietly.com",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "sugar_g",
               "req": false,
+              "short": "Sugars in grams per 100 g",
               "type": "`$NUMBER`"
             }
           ],
