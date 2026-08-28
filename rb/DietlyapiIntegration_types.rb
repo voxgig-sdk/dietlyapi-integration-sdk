@@ -434,94 +434,22 @@ Popular = Struct.new(
 
 # Request payload for Popular#list.
 #
-# @!attribute [rw] barcode
-#   @return [String, nil]
-#
-# @!attribute [rw] brand
-#   @return [String, nil]
-#
-# @!attribute [rw] calories_kcal
-#   @return [Float, nil]
-#
-# @!attribute [rw] carbs_g
-#   @return [Float, nil]
-#
 # @!attribute [rw] category
 #   @return [String, nil]
 #
-# @!attribute [rw] cholesterol_mg
-#   @return [Float, nil]
+# @!attribute [rw] has_image
+#   @return [Boolean, nil]
 #
-# @!attribute [rw] confidence
-#   @return [Float, nil]
-#
-# @!attribute [rw] fat_g
-#   @return [Float, nil]
-#
-# @!attribute [rw] fiber_g
-#   @return [Float, nil]
-#
-# @!attribute [rw] id
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] image_thumb_url
-#   @return [String, nil]
-#
-# @!attribute [rw] image_url
-#   @return [String, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] potassium_mg
-#   @return [Float, nil]
-#
-# @!attribute [rw] protein_g
-#   @return [Float, nil]
-#
-# @!attribute [rw] saturated_fat_g
-#   @return [Float, nil]
-#
-# @!attribute [rw] serving_desc
-#   @return [String, nil]
-#
-# @!attribute [rw] serving_size_g
-#   @return [Float, nil]
-#
-# @!attribute [rw] sodium_mg
-#   @return [Float, nil]
-#
-# @!attribute [rw] source
-#   @return [String, nil]
-#
-# @!attribute [rw] static_url
-#   @return [String, nil]
-#
-# @!attribute [rw] sugar_g
-#   @return [Float, nil]
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 PopularListMatch = Struct.new(
-  :barcode,
-  :brand,
-  :calories_kcal,
-  :carbs_g,
   :category,
-  :cholesterol_mg,
-  :confidence,
-  :fat_g,
-  :fiber_g,
-  :id,
-  :image_thumb_url,
-  :image_url,
-  :name,
-  :potassium_mg,
-  :protein_g,
-  :saturated_fat_g,
-  :serving_desc,
-  :serving_size_g,
-  :sodium_mg,
-  :source,
-  :static_url,
-  :sugar_g,
+  :has_image,
+  :limit,
+  :offset,
   keyword_init: true
 )
 
@@ -620,94 +548,18 @@ Search = Struct.new(
 
 # Request payload for Search#list.
 #
-# @!attribute [rw] barcode
-#   @return [String, nil]
-#
-# @!attribute [rw] brand
-#   @return [String, nil]
-#
-# @!attribute [rw] calories_kcal
-#   @return [Float, nil]
-#
-# @!attribute [rw] carbs_g
-#   @return [Float, nil]
-#
-# @!attribute [rw] category
-#   @return [String, nil]
-#
-# @!attribute [rw] cholesterol_mg
-#   @return [Float, nil]
-#
-# @!attribute [rw] confidence
-#   @return [Float, nil]
-#
-# @!attribute [rw] fat_g
-#   @return [Float, nil]
-#
-# @!attribute [rw] fiber_g
-#   @return [Float, nil]
-#
-# @!attribute [rw] id
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] image_thumb_url
-#   @return [String, nil]
-#
-# @!attribute [rw] image_url
-#   @return [String, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] potassium_mg
-#   @return [Float, nil]
-#
-# @!attribute [rw] protein_g
-#   @return [Float, nil]
-#
-# @!attribute [rw] saturated_fat_g
-#   @return [Float, nil]
-#
-# @!attribute [rw] serving_desc
-#   @return [String, nil]
-#
-# @!attribute [rw] serving_size_g
-#   @return [Float, nil]
-#
-# @!attribute [rw] sodium_mg
-#   @return [Float, nil]
+# @!attribute [rw] q
+#   @return [String]
 #
 # @!attribute [rw] source
 #   @return [String, nil]
-#
-# @!attribute [rw] static_url
-#   @return [String, nil]
-#
-# @!attribute [rw] sugar_g
-#   @return [Float, nil]
 SearchListMatch = Struct.new(
-  :barcode,
-  :brand,
-  :calories_kcal,
-  :carbs_g,
-  :category,
-  :cholesterol_mg,
-  :confidence,
-  :fat_g,
-  :fiber_g,
-  :id,
-  :image_thumb_url,
-  :image_url,
-  :name,
-  :potassium_mg,
-  :protein_g,
-  :saturated_fat_g,
-  :serving_desc,
-  :serving_size_g,
-  :sodium_mg,
+  :limit,
+  :q,
   :source,
-  :static_url,
-  :sugar_g,
   keyword_init: true
 )
 

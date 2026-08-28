@@ -142,28 +142,10 @@ type Popular struct {
 
 // PopularListMatch is the typed request payload for Popular.ListTyped.
 type PopularListMatch struct {
-	Barcode *string `json:"barcode,omitempty"`
-	Brand *string `json:"brand,omitempty"`
-	CaloriesKcal *float64 `json:"calories_kcal,omitempty"`
-	CarbsG *float64 `json:"carbs_g,omitempty"`
 	Category *string `json:"category,omitempty"`
-	CholesterolMg *float64 `json:"cholesterol_mg,omitempty"`
-	Confidence *float64 `json:"confidence,omitempty"`
-	FatG *float64 `json:"fat_g,omitempty"`
-	FiberG *float64 `json:"fiber_g,omitempty"`
-	Id *int `json:"id,omitempty"`
-	ImageThumbUrl *string `json:"image_thumb_url,omitempty"`
-	ImageUrl *string `json:"image_url,omitempty"`
-	Name *string `json:"name,omitempty"`
-	PotassiumMg *float64 `json:"potassium_mg,omitempty"`
-	ProteinG *float64 `json:"protein_g,omitempty"`
-	SaturatedFatG *float64 `json:"saturated_fat_g,omitempty"`
-	ServingDesc *string `json:"serving_desc,omitempty"`
-	ServingSizeG *float64 `json:"serving_size_g,omitempty"`
-	SodiumMg *float64 `json:"sodium_mg,omitempty"`
-	Source *string `json:"source,omitempty"`
-	StaticUrl *string `json:"static_url,omitempty"`
-	SugarG *float64 `json:"sugar_g,omitempty"`
+	HasImage *bool `json:"has_image,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
 }
 
 // Search is the typed data model for the search entity.
@@ -194,28 +176,9 @@ type Search struct {
 
 // SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
-	Barcode *string `json:"barcode,omitempty"`
-	Brand *string `json:"brand,omitempty"`
-	CaloriesKcal *float64 `json:"calories_kcal,omitempty"`
-	CarbsG *float64 `json:"carbs_g,omitempty"`
-	Category *string `json:"category,omitempty"`
-	CholesterolMg *float64 `json:"cholesterol_mg,omitempty"`
-	Confidence *float64 `json:"confidence,omitempty"`
-	FatG *float64 `json:"fat_g,omitempty"`
-	FiberG *float64 `json:"fiber_g,omitempty"`
-	Id *int `json:"id,omitempty"`
-	ImageThumbUrl *string `json:"image_thumb_url,omitempty"`
-	ImageUrl *string `json:"image_url,omitempty"`
-	Name *string `json:"name,omitempty"`
-	PotassiumMg *float64 `json:"potassium_mg,omitempty"`
-	ProteinG *float64 `json:"protein_g,omitempty"`
-	SaturatedFatG *float64 `json:"saturated_fat_g,omitempty"`
-	ServingDesc *string `json:"serving_desc,omitempty"`
-	ServingSizeG *float64 `json:"serving_size_g,omitempty"`
-	SodiumMg *float64 `json:"sodium_mg,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Q string `json:"q"`
 	Source *string `json:"source,omitempty"`
-	StaticUrl *string `json:"static_url,omitempty"`
-	SugarG *float64 `json:"sugar_g,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

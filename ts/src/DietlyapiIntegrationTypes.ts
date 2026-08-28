@@ -132,28 +132,10 @@ export interface Popular {
 }
 
 export interface PopularListMatch {
-  barcode?: string
-  brand?: string
-  calories_kcal?: number
-  carbs_g?: number
   category?: string
-  cholesterol_mg?: number
-  confidence?: number
-  fat_g?: number
-  fiber_g?: number
-  id?: number
-  image_thumb_url?: string
-  image_url?: string
-  name?: string
-  potassium_mg?: number
-  protein_g?: number
-  saturated_fat_g?: number
-  serving_desc?: string
-  serving_size_g?: number
-  sodium_mg?: number
-  source?: string
-  static_url?: string
-  sugar_g?: number
+  has_image?: boolean
+  limit?: number
+  offset?: number
 }
 
 export interface Search {
@@ -182,27 +164,8 @@ export interface Search {
 }
 
 export interface SearchListMatch {
-  barcode?: string
-  brand?: string
-  calories_kcal?: number
-  carbs_g?: number
-  category?: string
-  cholesterol_mg?: number
-  confidence?: number
-  fat_g?: number
-  fiber_g?: number
-  id?: number
-  image_thumb_url?: string
-  image_url?: string
-  name?: string
-  potassium_mg?: number
-  protein_g?: number
-  saturated_fat_g?: number
-  serving_desc?: string
-  serving_size_g?: number
-  sodium_mg?: number
+  limit?: number
+  q: string
   source?: string
-  static_url?: string
-  sugar_g?: number
 }
 

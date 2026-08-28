@@ -119,28 +119,10 @@
 ---@field sugar_g? number
 
 ---@class PopularListMatch
----@field barcode? string
----@field brand? string
----@field calories_kcal? number
----@field carbs_g? number
 ---@field category? string
----@field cholesterol_mg? number
----@field confidence? number
----@field fat_g? number
----@field fiber_g? number
----@field id? number
----@field image_thumb_url? string
----@field image_url? string
----@field name? string
----@field potassium_mg? number
----@field protein_g? number
----@field saturated_fat_g? number
----@field serving_desc? string
----@field serving_size_g? number
----@field sodium_mg? number
----@field source? string
----@field static_url? string
----@field sugar_g? number
+---@field has_image? boolean
+---@field limit? number
+---@field offset? number
 
 ---@class Search
 ---@field barcode? string
@@ -167,28 +149,9 @@
 ---@field sugar_g? number
 
 ---@class SearchListMatch
----@field barcode? string
----@field brand? string
----@field calories_kcal? number
----@field carbs_g? number
----@field category? string
----@field cholesterol_mg? number
----@field confidence? number
----@field fat_g? number
----@field fiber_g? number
----@field id? number
----@field image_thumb_url? string
----@field image_url? string
----@field name? string
----@field potassium_mg? number
----@field protein_g? number
----@field saturated_fat_g? number
----@field serving_desc? string
----@field serving_size_g? number
----@field sodium_mg? number
+---@field limit? number
+---@field q string
 ---@field source? string
----@field static_url? string
----@field sugar_g? number
 
 local M = {}
 

@@ -137,28 +137,10 @@ class Popular(TypedDict, total=False):
 
 
 class PopularListMatch(TypedDict, total=False):
-    barcode: str
-    brand: str
-    calories_kcal: float
-    carbs_g: float
     category: str
-    cholesterol_mg: float
-    confidence: float
-    fat_g: float
-    fiber_g: float
-    id: int
-    image_thumb_url: str
-    image_url: str
-    name: str
-    potassium_mg: float
-    protein_g: float
-    saturated_fat_g: float
-    serving_desc: str
-    serving_size_g: float
-    sodium_mg: float
-    source: str
-    static_url: str
-    sugar_g: float
+    has_image: bool
+    limit: int
+    offset: int
 
 
 class Search(TypedDict, total=False):
@@ -186,26 +168,10 @@ class Search(TypedDict, total=False):
     sugar_g: float
 
 
-class SearchListMatch(TypedDict, total=False):
-    barcode: str
-    brand: str
-    calories_kcal: float
-    carbs_g: float
-    category: str
-    cholesterol_mg: float
-    confidence: float
-    fat_g: float
-    fiber_g: float
-    id: int
-    image_thumb_url: str
-    image_url: str
-    name: str
-    potassium_mg: float
-    protein_g: float
-    saturated_fat_g: float
-    serving_desc: str
-    serving_size_g: float
-    sodium_mg: float
+class SearchListMatchRequired(TypedDict):
+    q: str
+
+
+class SearchListMatch(SearchListMatchRequired, total=False):
+    limit: int
     source: str
-    static_url: str
-    sugar_g: float

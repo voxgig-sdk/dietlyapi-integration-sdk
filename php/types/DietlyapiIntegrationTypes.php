@@ -151,28 +151,10 @@ class Popular
 /** Request payload for Popular#list. */
 class PopularListMatch
 {
-    public ?string $barcode = null;
-    public ?string $brand = null;
-    public ?float $calories_kcal = null;
-    public ?float $carbs_g = null;
     public ?string $category = null;
-    public ?float $cholesterol_mg = null;
-    public ?float $confidence = null;
-    public ?float $fat_g = null;
-    public ?float $fiber_g = null;
-    public ?int $id = null;
-    public ?string $image_thumb_url = null;
-    public ?string $image_url = null;
-    public ?string $name = null;
-    public ?float $potassium_mg = null;
-    public ?float $protein_g = null;
-    public ?float $saturated_fat_g = null;
-    public ?string $serving_desc = null;
-    public ?float $serving_size_g = null;
-    public ?float $sodium_mg = null;
-    public ?string $source = null;
-    public ?string $static_url = null;
-    public ?float $sugar_g = null;
+    public ?bool $has_image = null;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 
 /** Search entity data model. */
@@ -205,27 +187,8 @@ class Search
 /** Request payload for Search#list. */
 class SearchListMatch
 {
-    public ?string $barcode = null;
-    public ?string $brand = null;
-    public ?float $calories_kcal = null;
-    public ?float $carbs_g = null;
-    public ?string $category = null;
-    public ?float $cholesterol_mg = null;
-    public ?float $confidence = null;
-    public ?float $fat_g = null;
-    public ?float $fiber_g = null;
-    public ?int $id = null;
-    public ?string $image_thumb_url = null;
-    public ?string $image_url = null;
-    public ?string $name = null;
-    public ?float $potassium_mg = null;
-    public ?float $protein_g = null;
-    public ?float $saturated_fat_g = null;
-    public ?string $serving_desc = null;
-    public ?float $serving_size_g = null;
-    public ?float $sodium_mg = null;
+    public ?int $limit = null;
+    public string $q;
     public ?string $source = null;
-    public ?string $static_url = null;
-    public ?float $sugar_g = null;
 }
 
