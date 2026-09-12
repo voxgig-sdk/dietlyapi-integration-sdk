@@ -154,6 +154,10 @@ module DietlyapiIntegrationConfig
               "type" => "`$NUMBER`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "barcode",
           "op" => {
             "load" => {
@@ -176,15 +180,19 @@ module DietlyapiIntegrationConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/barcode/{code}",
-                  "parts" => [
-                    "barcode",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "code" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "barcode",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -194,6 +202,10 @@ module DietlyapiIntegrationConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "barcode",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -312,6 +324,10 @@ module DietlyapiIntegrationConfig
               "type" => "`$NUMBER`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "food",
           "op" => {
             "list" => {
@@ -323,9 +339,13 @@ module DietlyapiIntegrationConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/foods/categories",
-                  "parts" => [
-                    "foods",
-                    "categories",
+                  "segments" => [
+                    {
+                      "lit" => "foods",
+                    },
+                    {
+                      "lit" => "categories",
+                    },
                   ],
                   "select" => {
                     "$action" => "category",
@@ -334,6 +354,10 @@ module DietlyapiIntegrationConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "foods",
+                    "categories",
+                  ],
                 },
               ],
             },
@@ -357,15 +381,19 @@ module DietlyapiIntegrationConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/food/{food_id}",
-                  "parts" => [
-                    "food",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "food_id" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "food",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -375,6 +403,10 @@ module DietlyapiIntegrationConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "food",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -405,14 +437,19 @@ module DietlyapiIntegrationConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/health",
-                  "parts" => [
-                    "health",
+                  "segments" => [
+                    {
+                      "lit" => "health",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "health",
+                  ],
                 },
               ],
             },
@@ -527,6 +564,10 @@ module DietlyapiIntegrationConfig
               "type" => "`$NUMBER`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "popular",
           "op" => {
             "list" => {
@@ -568,9 +609,13 @@ module DietlyapiIntegrationConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/foods/popular",
-                  "parts" => [
-                    "foods",
-                    "popular",
+                  "segments" => [
+                    {
+                      "lit" => "foods",
+                    },
+                    {
+                      "lit" => "popular",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -584,6 +629,10 @@ module DietlyapiIntegrationConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "foods",
+                    "popular",
+                  ],
                 },
               ],
             },
@@ -698,6 +747,10 @@ module DietlyapiIntegrationConfig
               "type" => "`$NUMBER`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "search",
           "op" => {
             "list" => {
@@ -733,8 +786,10 @@ module DietlyapiIntegrationConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/search",
-                  "parts" => [
-                    "search",
+                  "segments" => [
+                    {
+                      "lit" => "search",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -747,6 +802,9 @@ module DietlyapiIntegrationConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "search",
+                  ],
                 },
               ],
             },

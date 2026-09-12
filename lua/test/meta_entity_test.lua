@@ -91,7 +91,7 @@ function meta_basic_setup(extra)
     ["DIETLYAPI_INTEGRATION_TEST_META_ENTID"] = idmap,
     ["DIETLYAPI_INTEGRATION_TEST_LIVE"] = "FALSE",
     ["DIETLYAPI_INTEGRATION_TEST_EXPLAIN"] = "FALSE",
-    ["DIETLYAPI_INTEGRATION_APIKEY"] = "NONE",
+    ["DIETLYAPI_INTEGRATION_APIKEY"] = "",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -102,6 +102,9 @@ function meta_basic_setup(extra)
 
   if env["DIETLYAPI_INTEGRATION_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
+      -- FIRST, so the generated fields below win: sdk-test-control.json's
+      -- test.client.options adds to the live client, it does not redirect it.
+      runner.live_client_options(),
       {
         apikey = env["DIETLYAPI_INTEGRATION_APIKEY"],
       },

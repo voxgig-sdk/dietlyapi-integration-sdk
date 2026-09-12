@@ -60,15 +60,18 @@ def _search_direct_setup(mockres):
     env = runner.env_override({
         "DIETLYAPI_INTEGRATION_TEST_SEARCH_ENTID": {},
         "DIETLYAPI_INTEGRATION_TEST_LIVE": "FALSE",
-        "DIETLYAPI_INTEGRATION_APIKEY": "NONE",
+        "DIETLYAPI_INTEGRATION_APIKEY": "",
     })
 
     live = env.get("DIETLYAPI_INTEGRATION_TEST_LIVE") == "TRUE"
 
     if live:
-        merged_opts = {
+        # sdk-test-control.json's test.client.options seeds the live
+        # client; the generated fields below overwrite anything they name.
+        merged_opts = dict(runner.live_client_options())
+        merged_opts.update({
             "apikey": env.get("DIETLYAPI_INTEGRATION_APIKEY"),
-        }
+        })
         client = DietlyapiIntegrationSDK(merged_opts)
         return {
             "client": client,

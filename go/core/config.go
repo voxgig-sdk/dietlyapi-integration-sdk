@@ -146,6 +146,10 @@ func MakeConfig() map[string]any {
 						"type": "`$NUMBER`",
 					},
 				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
+				},
 				"name": "barcode",
 				"op": map[string]any{
 					"load": map[string]any{
@@ -168,13 +172,17 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/barcode/{code}",
-								"parts": []any{
-									"barcode",
-									"{id}",
-								},
 								"rename": map[string]any{
 									"param": map[string]any{
 										"code": "id",
+									},
+								},
+								"segments": []any{
+									map[string]any{
+										"lit": "barcode",
+									},
+									map[string]any{
+										"var": "id",
 									},
 								},
 								"select": map[string]any{
@@ -185,6 +193,10 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"barcode",
+									"{id}",
 								},
 							},
 						},
@@ -304,6 +316,10 @@ func MakeConfig() map[string]any {
 						"type": "`$NUMBER`",
 					},
 				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
+				},
 				"name": "food",
 				"op": map[string]any{
 					"list": map[string]any{
@@ -315,9 +331,13 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/foods/categories",
-								"parts": []any{
-									"foods",
-									"categories",
+								"segments": []any{
+									map[string]any{
+										"lit": "foods",
+									},
+									map[string]any{
+										"lit": "categories",
+									},
 								},
 								"select": map[string]any{
 									"$action": "category",
@@ -325,6 +345,10 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"foods",
+									"categories",
 								},
 							},
 						},
@@ -349,13 +373,17 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/food/{food_id}",
-								"parts": []any{
-									"food",
-									"{id}",
-								},
 								"rename": map[string]any{
 									"param": map[string]any{
 										"food_id": "id",
+									},
+								},
+								"segments": []any{
+									map[string]any{
+										"lit": "food",
+									},
+									map[string]any{
+										"var": "id",
 									},
 								},
 								"select": map[string]any{
@@ -366,6 +394,10 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"food",
+									"{id}",
 								},
 							},
 						},
@@ -397,13 +429,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/health",
-								"parts": []any{
-									"health",
+								"segments": []any{
+									map[string]any{
+										"lit": "health",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"health",
 								},
 							},
 						},
@@ -519,6 +556,10 @@ func MakeConfig() map[string]any {
 						"type": "`$NUMBER`",
 					},
 				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
+				},
 				"name": "popular",
 				"op": map[string]any{
 					"list": map[string]any{
@@ -560,9 +601,13 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/foods/popular",
-								"parts": []any{
-									"foods",
-									"popular",
+								"segments": []any{
+									map[string]any{
+										"lit": "foods",
+									},
+									map[string]any{
+										"lit": "popular",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -575,6 +620,10 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"foods",
+									"popular",
 								},
 							},
 						},
@@ -690,6 +739,10 @@ func MakeConfig() map[string]any {
 						"type": "`$NUMBER`",
 					},
 				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
+				},
 				"name": "search",
 				"op": map[string]any{
 					"list": map[string]any{
@@ -725,8 +778,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/search",
-								"parts": []any{
-									"search",
+								"segments": []any{
+									map[string]any{
+										"lit": "search",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -739,6 +794,9 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
+								"parts": []any{
+									"search",
+								},
 							},
 						},
 					},
@@ -749,6 +807,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

@@ -180,9 +180,13 @@ main: kit: entity: popular: {
           }
           method: "GET"
           orig: "/foods/popular"
-          parts: [
-            "foods"
-            "popular"
+          segments: [
+            {
+              lit: "foods"
+            }
+            {
+              lit: "popular"
+            }
           ]
           select: {
             exist: [

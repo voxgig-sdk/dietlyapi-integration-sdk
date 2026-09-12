@@ -1,0 +1,149 @@
+export interface Barcode {
+    barcode?: string;
+    brand?: string;
+    calories_kcal?: number;
+    carbs_g?: number;
+    category?: string;
+    cholesterol_mg?: number;
+    confidence?: number;
+    fat_g?: number;
+    fiber_g?: number;
+    id?: number;
+    image_thumb_url?: string;
+    image_url?: string;
+    name?: string;
+    potassium_mg?: number;
+    protein_g?: number;
+    saturated_fat_g?: number;
+    serving_desc?: string;
+    serving_size_g?: number;
+    sodium_mg?: number;
+    source?: string;
+    static_url?: string;
+    sugar_g?: number;
+}
+export interface BarcodeLoadMatch {
+    id: string;
+}
+export interface Food {
+    barcode?: string;
+    brand?: string;
+    calories_kcal?: number;
+    carbs_g?: number;
+    category?: string;
+    cholesterol_mg?: number;
+    confidence?: number;
+    count?: number;
+    fat_g?: number;
+    fiber_g?: number;
+    id?: number;
+    image_thumb_url?: string;
+    image_url?: string;
+    name?: string;
+    potassium_mg?: number;
+    protein_g?: number;
+    saturated_fat_g?: number;
+    serving_desc?: string;
+    serving_size_g?: number;
+    sodium_mg?: number;
+    source?: string;
+    static_url?: string;
+    sugar_g?: number;
+}
+export interface FoodLoadMatch {
+    id: number;
+}
+export interface FoodListMatch {
+    barcode?: string;
+    brand?: string;
+    calories_kcal?: number;
+    carbs_g?: number;
+    category?: string;
+    cholesterol_mg?: number;
+    confidence?: number;
+    count?: number;
+    fat_g?: number;
+    fiber_g?: number;
+    id?: number;
+    image_thumb_url?: string;
+    image_url?: string;
+    name?: string;
+    potassium_mg?: number;
+    protein_g?: number;
+    saturated_fat_g?: number;
+    serving_desc?: string;
+    serving_size_g?: number;
+    sodium_mg?: number;
+    source?: string;
+    static_url?: string;
+    sugar_g?: number;
+    $action?: string;
+    [action: string]: any;
+}
+export interface Meta {
+    foods_in_db?: number;
+    status?: string;
+}
+export interface MetaLoadMatch {
+    foods_in_db?: number;
+    status?: string;
+}
+export interface Popular {
+    barcode?: string;
+    brand?: string;
+    calories_kcal?: number;
+    carbs_g?: number;
+    category?: string;
+    cholesterol_mg?: number;
+    confidence?: number;
+    fat_g?: number;
+    fiber_g?: number;
+    id?: number;
+    image_thumb_url?: string;
+    image_url?: string;
+    name?: string;
+    potassium_mg?: number;
+    protein_g?: number;
+    saturated_fat_g?: number;
+    serving_desc?: string;
+    serving_size_g?: number;
+    sodium_mg?: number;
+    source?: string;
+    static_url?: string;
+    sugar_g?: number;
+}
+export interface PopularListMatch {
+    category?: string;
+    has_image?: boolean;
+    limit?: number;
+    offset?: number;
+}
+export interface Search {
+    barcode?: string;
+    brand?: string;
+    calories_kcal?: number;
+    carbs_g?: number;
+    category?: string;
+    cholesterol_mg?: number;
+    confidence?: number;
+    fat_g?: number;
+    fiber_g?: number;
+    id?: number;
+    image_thumb_url?: string;
+    image_url?: string;
+    name?: string;
+    potassium_mg?: number;
+    protein_g?: number;
+    saturated_fat_g?: number;
+    serving_desc?: string;
+    serving_size_g?: number;
+    sodium_mg?: number;
+    source?: string;
+    static_url?: string;
+    sugar_g?: number;
+}
+export interface SearchListMatch {
+    limit?: number;
+    q: string;
+    source?: string;
+}

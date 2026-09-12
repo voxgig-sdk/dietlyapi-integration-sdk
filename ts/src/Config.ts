@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -186,6 +197,10 @@ class Config {
           "type": "`$NUMBER`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "barcode",
       "op": {
         "load": {
@@ -208,15 +223,19 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/barcode/{code}",
-              "parts": [
-                "barcode",
-                "{id}"
-              ],
               "rename": {
                 "param": {
                   "code": "id"
                 }
               },
+              "segments": [
+                {
+                  "lit": "barcode"
+                },
+                {
+                  "var": "id"
+                }
+              ],
               "select": {
                 "exist": [
                   "id"
@@ -225,7 +244,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "barcode",
+                "{id}"
+              ]
             }
           ]
         }
@@ -344,6 +367,10 @@ class Config {
           "type": "`$NUMBER`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "food",
       "op": {
         "list": {
@@ -355,9 +382,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/foods/categories",
-              "parts": [
-                "foods",
-                "categories"
+              "segments": [
+                {
+                  "lit": "foods"
+                },
+                {
+                  "lit": "categories"
+                }
               ],
               "select": {
                 "$action": "category"
@@ -365,7 +396,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "foods",
+                "categories"
+              ]
             }
           ]
         },
@@ -389,15 +424,19 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/food/{food_id}",
-              "parts": [
-                "food",
-                "{id}"
-              ],
               "rename": {
                 "param": {
                   "food_id": "id"
                 }
               },
+              "segments": [
+                {
+                  "lit": "food"
+                },
+                {
+                  "var": "id"
+                }
+              ],
               "select": {
                 "exist": [
                   "id"
@@ -406,7 +445,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "food",
+                "{id}"
+              ]
             }
           ]
         }
@@ -437,14 +480,19 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/health",
-              "parts": [
-                "health"
+              "segments": [
+                {
+                  "lit": "health"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "health"
+              ]
             }
           ]
         }
@@ -559,6 +607,10 @@ class Config {
           "type": "`$NUMBER`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "popular",
       "op": {
         "list": {
@@ -600,9 +652,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/foods/popular",
-              "parts": [
-                "foods",
-                "popular"
+              "segments": [
+                {
+                  "lit": "foods"
+                },
+                {
+                  "lit": "popular"
+                }
               ],
               "select": {
                 "exist": [
@@ -615,7 +671,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "foods",
+                "popular"
+              ]
             }
           ]
         }
@@ -730,6 +790,10 @@ class Config {
           "type": "`$NUMBER`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "search",
       "op": {
         "list": {
@@ -765,8 +829,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/search",
-              "parts": [
-                "search"
+              "segments": [
+                {
+                  "lit": "search"
+                }
               ],
               "select": {
                 "exist": [
@@ -778,7 +844,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "search"
+              ]
             }
           ]
         }
@@ -794,6 +863,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

@@ -1,6 +1,14 @@
 # DietlyapiIntegration SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -163,6 +171,10 @@ def make_config():
             "type": "`$NUMBER`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "barcode",
         "op": {
           "load": {
@@ -185,15 +197,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/barcode/{code}",
-                "parts": [
-                  "barcode",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "code": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "barcode",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -203,6 +219,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "barcode",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -321,6 +341,10 @@ def make_config():
             "type": "`$NUMBER`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "food",
         "op": {
           "list": {
@@ -332,9 +356,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/foods/categories",
-                "parts": [
-                  "foods",
-                  "categories",
+                "segments": [
+                  {
+                    "lit": "foods",
+                  },
+                  {
+                    "lit": "categories",
+                  },
                 ],
                 "select": {
                   "$action": "category",
@@ -343,6 +371,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "foods",
+                  "categories",
+                ],
               },
             ],
           },
@@ -366,15 +398,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/food/{food_id}",
-                "parts": [
-                  "food",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "food_id": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "food",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -384,6 +420,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "food",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -414,14 +454,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/health",
-                "parts": [
-                  "health",
+                "segments": [
+                  {
+                    "lit": "health",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "health",
+                ],
               },
             ],
           },
@@ -536,6 +581,10 @@ def make_config():
             "type": "`$NUMBER`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "popular",
         "op": {
           "list": {
@@ -577,9 +626,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/foods/popular",
-                "parts": [
-                  "foods",
-                  "popular",
+                "segments": [
+                  {
+                    "lit": "foods",
+                  },
+                  {
+                    "lit": "popular",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -593,6 +646,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "foods",
+                  "popular",
+                ],
               },
             ],
           },
@@ -707,6 +764,10 @@ def make_config():
             "type": "`$NUMBER`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "search",
         "op": {
           "list": {
@@ -742,8 +803,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/search",
-                "parts": [
-                  "search",
+                "segments": [
+                  {
+                    "lit": "search",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -756,6 +819,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "search",
+                ],
               },
             ],
           },

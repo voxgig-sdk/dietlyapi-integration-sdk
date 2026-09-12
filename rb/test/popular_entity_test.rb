@@ -118,7 +118,7 @@ def popular_basic_setup(extra)
     "DIETLYAPI_INTEGRATION_TEST_POPULAR_ENTID" => idmap,
     "DIETLYAPI_INTEGRATION_TEST_LIVE" => "FALSE",
     "DIETLYAPI_INTEGRATION_TEST_EXPLAIN" => "FALSE",
-    "DIETLYAPI_INTEGRATION_APIKEY" => "NONE",
+    "DIETLYAPI_INTEGRATION_APIKEY" => "",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -129,6 +129,9 @@ def popular_basic_setup(extra)
 
   if env["DIETLYAPI_INTEGRATION_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      Runner.live_client_options,
       {
         "apikey" => env["DIETLYAPI_INTEGRATION_APIKEY"],
       },

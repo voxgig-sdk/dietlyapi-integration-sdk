@@ -150,9 +150,13 @@ main: kit: entity: food: {
         {
           method: "GET"
           orig: "/foods/categories"
-          parts: [
-            "foods"
-            "categories"
+          segments: [
+            {
+              lit: "foods"
+            }
+            {
+              lit: "categories"
+            }
           ]
           select: {
             "$action": "category"
@@ -182,15 +186,19 @@ main: kit: entity: food: {
           }
           method: "GET"
           orig: "/food/{food_id}"
-          parts: [
-            "food"
-            "{id}"
-          ]
           rename: {
             param: {
               food_id: "id"
             }
           }
+          segments: [
+            {
+              lit: "food"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

@@ -157,15 +157,19 @@ main: kit: entity: barcode: {
           }
           method: "GET"
           orig: "/barcode/{code}"
-          parts: [
-            "barcode"
-            "{id}"
-          ]
           rename: {
             param: {
               code: "id"
             }
           }
+          segments: [
+            {
+              lit: "barcode"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"
