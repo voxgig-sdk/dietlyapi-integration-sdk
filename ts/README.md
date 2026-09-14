@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { DietlyapiIntegrationSDK } from '@voxgig-sdk/dietlyapi-integration'
+import { DietlyapiIntegrationSDK } from '@voxgig-sdk/dietlyapi-integration-sdk'
 
 const client = new DietlyapiIntegrationSDK({
   apikey: process.env.DIETLYAPI_INTEGRATION_APIKEY,
@@ -725,7 +725,7 @@ dietlyapi-integration/
 Import the SDK from the package root:
 
 ```ts
-import { DietlyapiIntegrationSDK } from '@voxgig-sdk/dietlyapi-integration'
+import { DietlyapiIntegrationSDK } from '@voxgig-sdk/dietlyapi-integration-sdk'
 ```
 
 ### Entity state

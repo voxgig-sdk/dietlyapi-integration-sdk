@@ -105,7 +105,7 @@ local results, err = client:Search():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/dietlyapi-integration` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/releases) |
+| TypeScript | `@voxgig-sdk/dietlyapi-integration-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/releases) |
 | Python | `voxgig-sdk-dietlyapi-integration` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/releases) |
 | PHP | `voxgig-sdk/dietlyapi-integration` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/dietlyapi-integration-sdk/go` | `go get github.com/voxgig-sdk/dietlyapi-integration-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Search():list()
 ### TypeScript
 
 ```ts
-import { DietlyapiIntegrationSDK } from '@voxgig-sdk/dietlyapi-integration'
+import { DietlyapiIntegrationSDK } from '@voxgig-sdk/dietlyapi-integration-sdk'
 
 const client = new DietlyapiIntegrationSDK({
   apikey: process.env.DIETLYAPI_INTEGRATION_APIKEY,
