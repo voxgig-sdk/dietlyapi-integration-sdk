@@ -1,12 +1,18 @@
 # DietlyapiIntegration SDK feature factory
 
 from dietlyapiintegration_sdk.feature.base_feature import DietlyapiIntegrationBaseFeature
+from dietlyapiintegration_sdk.feature.ratelimit_feature import DietlyapiIntegrationRatelimitFeature
+from dietlyapiintegration_sdk.feature.retry_feature import DietlyapiIntegrationRetryFeature
 from dietlyapiintegration_sdk.feature.test_feature import DietlyapiIntegrationTestFeature
+from dietlyapiintegration_sdk.feature.timeout_feature import DietlyapiIntegrationTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: DietlyapiIntegrationBaseFeature(),
+    "ratelimit": lambda: DietlyapiIntegrationRatelimitFeature(),
+    "retry": lambda: DietlyapiIntegrationRetryFeature(),
     "test": lambda: DietlyapiIntegrationTestFeature(),
+    "timeout": lambda: DietlyapiIntegrationTimeoutFeature(),
 }
 
 

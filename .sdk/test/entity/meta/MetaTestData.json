@@ -2,17 +2,17 @@
   "existing": {
     "meta": {
       "META00": {
-        "foods_in_db": "s14",
+        "foods_in_db": 20,
         "status": "s15",
         "id": "META00"
       },
       "META01": {
-        "foods_in_db": "s28",
+        "foods_in_db": 40,
         "status": "s29",
         "id": "META01"
       },
       "META02": {
-        "foods_in_db": "s3c",
+        "foods_in_db": 60,
         "status": "s3d",
         "id": "META02"
       }
@@ -21,8 +21,56 @@
   "new": {
     "meta": {
       "meta_ref01": {
-        "foods_in_db": "s50",
+        "foods_in_db": 80,
         "status": "s51"
+      }
+    }
+  },
+  "requests": {
+    "GET /health": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "health",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "foods_in_db": 4749433,
+                  "status": "ok"
+                },
+                "schema": {
+                  "properties": {
+                    "foods_in_db": {
+                      "type": "integer"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Service status and database size"
+          }
+        },
+        "security": [
+          {},
+          {
+            "bearerAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "bearerAuth": {
+            "description": "Optional for the endpoints in this spec. Get a free key instantly at https://www.getdietly.com/account (no card required).",
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "definition"
       }
     }
   }

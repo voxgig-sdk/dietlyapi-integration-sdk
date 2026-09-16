@@ -4,7 +4,10 @@ declare(strict_types=1);
 // DietlyapiIntegration SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class DietlyapiIntegrationFeatures
@@ -14,8 +17,14 @@ class DietlyapiIntegrationFeatures
         switch ($name) {
             case "base":
                 return new DietlyapiIntegrationBaseFeature();
+            case "ratelimit":
+                return new DietlyapiIntegrationRatelimitFeature();
+            case "retry":
+                return new DietlyapiIntegrationRetryFeature();
             case "test":
                 return new DietlyapiIntegrationTestFeature();
+            case "timeout":
+                return new DietlyapiIntegrationTimeoutFeature();
             default:
                 return new DietlyapiIntegrationBaseFeature();
         }
@@ -31,7 +40,10 @@ class DietlyapiIntegrationFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

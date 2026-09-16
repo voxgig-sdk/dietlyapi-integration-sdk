@@ -23,6 +23,12 @@ main: kit: entity: meta: {
       name: "load"
       points: [
         {
+          contract: {
+            id: "GET /health"
+            json: "{\"operationId\":\"health\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"foods_in_db\":4749433,\"status\":\"ok\"},\"schema\":{\"properties\":{\"foods_in_db\":{\"type\":\"integer\"},\"status\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Service status and database size\"}},\"security\":[{},{\"bearerAuth\":[]}],\"securitySchemes\":{\"bearerAuth\":{\"description\":\"Optional for the endpoints in this spec. Get a free key instantly at https://www.getdietly.com/account (no card required).\",\"scheme\":\"bearer\",\"type\":\"http\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/health"
           segments: [
