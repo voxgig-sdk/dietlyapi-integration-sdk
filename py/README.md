@@ -289,7 +289,6 @@ API path: `/barcode/{code}`
 | `category` |  |
 | `cholesterol_mg` | Cholesterol in mg per 100 g |
 | `confidence` | Data confidence score, 0–1 |
-| `count` |  |
 | `fat_g` | Total fat in grams per 100 g |
 | `fiber_g` | Fibre in grams per 100 g |
 | `id` |  |
@@ -454,7 +453,6 @@ Create an instance: `food = client.Food()`
 | `category` | `str` |  |
 | `cholesterol_mg` | `float` | Cholesterol in mg per 100 g |
 | `confidence` | `float` | Data confidence score, 0–1 |
-| `count` | `int` |  |
 | `fat_g` | `float` | Total fat in grams per 100 g |
 | `fiber_g` | `float` | Fibre in grams per 100 g |
 | `id` | `int` |  |
@@ -738,6 +736,7 @@ Use `helpers.to_map()` to safely validate that a value is a dict.
 py/
 ├── dietlyapiintegration_sdk.py         -- Main SDK module
 ├── config.py                    -- Configuration
+├── schema.py                    -- Generated option + entity specs
 ├── features.py                  -- Feature factory
 ├── core/                        -- Core types and context
 ├── entity/                      -- Entity implementations

@@ -190,7 +190,6 @@ food = client.Food
 | `category` | `String` | No |  |
 | `cholesterol_mg` | `Float` | No | Cholesterol in mg per 100 g |
 | `confidence` | `Float` | No | Data confidence score, 0–1 |
-| `count` | `Integer` | No |  |
 | `fat_g` | `Float` | No | Total fat in grams per 100 g |
 | `fiber_g` | `Float` | No | Fibre in grams per 100 g |
 | `id` | `Integer` | No |  |

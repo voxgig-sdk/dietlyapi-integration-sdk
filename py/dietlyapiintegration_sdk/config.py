@@ -320,10 +320,6 @@ def make_config():
             "type": "`$NUMBER`",
           },
           {
-            "name": "count",
-            "type": "`$INTEGER`",
-          },
-          {
             "name": "fat_g",
             "short": "Total fat in grams per 100 g",
             "type": "`$NUMBER`",

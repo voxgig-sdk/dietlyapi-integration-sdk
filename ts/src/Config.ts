@@ -131,21 +131,21 @@ class Config {
 
     entity: {
       
-      barcode: {
-      },
-
-      food: {
-      },
-
-      meta: {
-      },
-
-      popular: {
-      },
-
-      search: {
-      },
-
+        barcode: {
+        },
+  
+        food: {
+        },
+  
+        meta: {
+        },
+  
+        popular: {
+        },
+  
+        search: {
+        },
+  
     }
   }
 
@@ -350,10 +350,6 @@ class Config {
           "name": "confidence",
           "short": "Data confidence score, 0–1",
           "type": "`$NUMBER`"
-        },
-        {
-          "name": "count",
-          "type": "`$INTEGER`"
         },
         {
           "name": "fat_g",

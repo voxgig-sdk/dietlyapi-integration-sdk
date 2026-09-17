@@ -295,10 +295,6 @@ func MakeConfig() map[string]any {
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
-						"name": "count",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
 						"name": "fat_g",
 						"short": "Total fat in grams per 100 g",
 						"type": "`$NUMBER`",

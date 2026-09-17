@@ -273,7 +273,6 @@ API path: `/barcode/{code}`
 | `category` |  |
 | `cholesterol_mg` | Cholesterol in mg per 100 g |
 | `confidence` | Data confidence score, 0–1 |
-| `count` |  |
 | `fat_g` | Total fat in grams per 100 g |
 | `fiber_g` | Fibre in grams per 100 g |
 | `id` |  |
@@ -438,7 +437,6 @@ Create an instance: `local food = client:Food(nil)`
 | `category` | `string` |  |
 | `cholesterol_mg` | `number` | Cholesterol in mg per 100 g |
 | `confidence` | `number` | Data confidence score, 0–1 |
-| `count` | `number` |  |
 | `fat_g` | `number` | Total fat in grams per 100 g |
 | `fiber_g` | `number` | Fibre in grams per 100 g |
 | `id` | `number` |  |
@@ -722,6 +720,7 @@ Use `helpers.to_map()` to safely validate that a value is a table.
 lua/
 ├── dietlyapi-integration_sdk.lua    -- Main SDK module
 ├── config.lua               -- Configuration
+├── schema.lua               -- Generated option + entity specs
 ├── features.lua             -- Feature factory
 ├── core/                    -- Core types and context
 ├── entity/                  -- Entity implementations

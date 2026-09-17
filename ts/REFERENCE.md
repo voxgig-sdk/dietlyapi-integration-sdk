@@ -243,7 +243,6 @@ const food = client.Food()
 | `category` | `string` | No |  |
 | `cholesterol_mg` | `number` | No | Cholesterol in mg per 100 g |
 | `confidence` | `number` | No | Data confidence score, 0–1 |
-| `count` | `number` | No |  |
 | `fat_g` | `number` | No | Total fat in grams per 100 g |
 | `fiber_g` | `number` | No | Fibre in grams per 100 g |
 | `id` | `number` | No |  |

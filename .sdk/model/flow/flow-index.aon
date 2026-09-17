@@ -1,7 +1,7 @@
 # Flows
 
-@"BasicBarcodeFlow.aon"
-@"BasicFoodFlow.aon"
-@"BasicMetaFlow.aon"
-@"BasicPopularFlow.aon"
-@"BasicSearchFlow.aon"
+@"./BasicBarcodeFlow.aon"
+@"./BasicFoodFlow.aon"
+@"./BasicMetaFlow.aon"
+@"./BasicPopularFlow.aon"
+@"./BasicSearchFlow.aon"

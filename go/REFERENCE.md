@@ -194,7 +194,6 @@ fmt.Println(food.GetName()) // "food"
 | `category` | `string` | No |  |
 | `cholesterol_mg` | `float64` | No | Cholesterol in mg per 100 g |
 | `confidence` | `float64` | No | Data confidence score, 0–1 |
-| `count` | `int` | No |  |
 | `fat_g` | `float64` | No | Total fat in grams per 100 g |
 | `fiber_g` | `float64` | No | Fibre in grams per 100 g |
 | `id` | `int` | No |  |

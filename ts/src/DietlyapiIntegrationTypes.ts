@@ -42,7 +42,6 @@ export interface Food {
   category?: string
   cholesterol_mg?: number
   confidence?: number
-  count?: number
   fat_g?: number
   fiber_g?: number
   id?: number
@@ -72,7 +71,6 @@ export interface FoodListMatch {
   category?: string
   cholesterol_mg?: number
   confidence?: number
-  count?: number
   fat_g?: number
   fiber_g?: number
   id?: number

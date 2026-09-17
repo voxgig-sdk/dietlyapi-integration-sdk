@@ -52,7 +52,6 @@ type Food struct {
 	Category *string `json:"category,omitempty"`
 	CholesterolMg *float64 `json:"cholesterol_mg,omitempty"`
 	Confidence *float64 `json:"confidence,omitempty"`
-	Count *int `json:"count,omitempty"`
 	FatG *float64 `json:"fat_g,omitempty"`
 	FiberG *float64 `json:"fiber_g,omitempty"`
 	Id *int `json:"id,omitempty"`
@@ -84,7 +83,6 @@ type FoodListMatch struct {
 	Category *string `json:"category,omitempty"`
 	CholesterolMg *float64 `json:"cholesterol_mg,omitempty"`
 	Confidence *float64 `json:"confidence,omitempty"`
-	Count *int `json:"count,omitempty"`
 	FatG *float64 `json:"fat_g,omitempty"`
 	FiberG *float64 `json:"fiber_g,omitempty"`
 	Id *int `json:"id,omitempty"`

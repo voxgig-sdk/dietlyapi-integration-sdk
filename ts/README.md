@@ -341,7 +341,6 @@ API path: `/barcode/{code}`
 | `category` |  |
 | `cholesterol_mg` | Cholesterol in mg per 100 g |
 | `confidence` | Data confidence score, 0–1 |
-| `count` |  |
 | `fat_g` | Total fat in grams per 100 g |
 | `fiber_g` | Fibre in grams per 100 g |
 | `id` |  |
@@ -506,7 +505,6 @@ Create an instance: `const food = client.Food()`
 | `category` | `string` |  |
 | `cholesterol_mg` | `number` | Cholesterol in mg per 100 g |
 | `confidence` | `number` | Data confidence score, 0–1 |
-| `count` | `number` |  |
 | `fat_g` | `number` | Total fat in grams per 100 g |
 | `fiber_g` | `number` | Fibre in grams per 100 g |
 | `id` | `number` |  |

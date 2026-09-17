@@ -53,7 +53,6 @@ class Food(TypedDict, total=False):
     category: str
     cholesterol_mg: float
     confidence: float
-    count: int
     fat_g: float
     fiber_g: float
     id: int
@@ -83,7 +82,6 @@ class FoodListMatch(TypedDict, total=False):
     category: str
     cholesterol_mg: float
     confidence: float
-    count: int
     fat_g: float
     fiber_g: float
     id: int

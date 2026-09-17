@@ -282,7 +282,6 @@ API path: `/barcode/{code}`
 | `category` |  |
 | `cholesterol_mg` | Cholesterol in mg per 100 g |
 | `confidence` | Data confidence score, 0–1 |
-| `count` |  |
 | `fat_g` | Total fat in grams per 100 g |
 | `fiber_g` | Fibre in grams per 100 g |
 | `id` |  |
@@ -448,7 +447,6 @@ Create an instance: `food = client.Food`
 | `category` | `String` |  |
 | `cholesterol_mg` | `Float` | Cholesterol in mg per 100 g |
 | `confidence` | `Float` | Data confidence score, 0–1 |
-| `count` | `Integer` |  |
 | `fat_g` | `Float` | Total fat in grams per 100 g |
 | `fiber_g` | `Float` | Fibre in grams per 100 g |
 | `id` | `Integer` |  |
@@ -737,6 +735,7 @@ Use `Helpers.to_map()` to safely validate that a value is a hash.
 rb/
 ├── DietlyapiIntegration_sdk.rb       -- Main SDK module
 ├── config.rb                  -- Configuration
+├── schema.rb                  -- Generated option + entity specs
 ├── features.rb                -- Feature factory
 ├── core/                      -- Core types and context
 ├── entity/                    -- Entity implementations

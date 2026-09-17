@@ -133,9 +133,6 @@ BarcodeLoadMatch = Struct.new(
 # @!attribute [rw] confidence
 #   @return [Float, nil]
 #
-# @!attribute [rw] count
-#   @return [Integer, nil]
-#
 # @!attribute [rw] fat_g
 #   @return [Float, nil]
 #
@@ -188,7 +185,6 @@ Food = Struct.new(
   :category,
   :cholesterol_mg,
   :confidence,
-  :count,
   :fat_g,
   :fiber_g,
   :id,
@@ -238,9 +234,6 @@ FoodLoadMatch = Struct.new(
 #
 # @!attribute [rw] confidence
 #   @return [Float, nil]
-#
-# @!attribute [rw] count
-#   @return [Integer, nil]
 #
 # @!attribute [rw] fat_g
 #   @return [Float, nil]
@@ -294,7 +287,6 @@ FoodListMatch = Struct.new(
   :category,
   :cholesterol_mg,
   :confidence,
-  :count,
   :fat_g,
   :fiber_g,
   :id,

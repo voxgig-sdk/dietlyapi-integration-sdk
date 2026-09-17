@@ -307,7 +307,6 @@ API path: `/barcode/{code}`
 | `"category"` |  |
 | `"cholesterol_mg"` | Cholesterol in mg per 100 g |
 | `"confidence"` | Data confidence score, 0–1 |
-| `"count"` |  |
 | `"fat_g"` | Total fat in grams per 100 g |
 | `"fiber_g"` | Fibre in grams per 100 g |
 | `"id"` |  |
@@ -476,7 +475,6 @@ Create an instance: `food := client.Food(nil)`
 | `category` | `string` |  |
 | `cholesterol_mg` | `float64` | Cholesterol in mg per 100 g |
 | `confidence` | `float64` | Data confidence score, 0–1 |
-| `count` | `int` |  |
 | `fat_g` | `float64` | Total fat in grams per 100 g |
 | `fiber_g` | `float64` | Fibre in grams per 100 g |
 | `id` | `int` |  |

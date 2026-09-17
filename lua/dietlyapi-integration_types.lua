@@ -41,7 +41,6 @@
 ---@field category? string
 ---@field cholesterol_mg? number
 ---@field confidence? number
----@field count? number
 ---@field fat_g? number
 ---@field fiber_g? number
 ---@field id? number
@@ -69,7 +68,6 @@
 ---@field category? string
 ---@field cholesterol_mg? number
 ---@field confidence? number
----@field count? number
 ---@field fat_g? number
 ---@field fiber_g? number
 ---@field id? number

@@ -105,12 +105,12 @@ local results, err = client:Search():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/dietlyapi-integration-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/releases) |
-| Python | `voxgig-sdk-dietlyapi-integration` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/releases) |
-| PHP | `voxgig-sdk/dietlyapi-integration` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/releases) |
+| TypeScript | `@voxgig-sdk/dietlyapi-integration-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/tags) |
+| Python | `voxgig-sdk-dietlyapi-integration` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/tags) |
+| PHP | `voxgig-sdk/dietlyapi-integration` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/dietlyapi-integration-sdk/go` | `go get github.com/voxgig-sdk/dietlyapi-integration-sdk/go@latest` |
-| Ruby | `voxgig-sdk-dietlyapi-integration` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/releases) |
-| Lua | `voxgig-sdk-dietlyapi-integration` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/releases) |
+| Ruby | `voxgig-sdk-dietlyapi-integration` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/tags) |
+| Lua | `voxgig-sdk-dietlyapi-integration` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dietlyapi-integration-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/dietlyapi-integration-sdk/go-cli` | `go install github.com/voxgig-sdk/dietlyapi-integration-sdk/go-cli/cmd/dietlyapi-integration@latest` |
 | Go MCP server | `github.com/voxgig-sdk/dietlyapi-integration-sdk/go-mcp` | `go get github.com/voxgig-sdk/dietlyapi-integration-sdk/go-mcp@latest` |
 

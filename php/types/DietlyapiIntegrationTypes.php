@@ -55,7 +55,6 @@ class Food
     public ?string $category = null;
     public ?float $cholesterol_mg = null;
     public ?float $confidence = null;
-    public ?int $count = null;
     public ?float $fat_g = null;
     public ?float $fiber_g = null;
     public ?int $id = null;
@@ -89,7 +88,6 @@ class FoodListMatch
     public ?string $category = null;
     public ?float $cholesterol_mg = null;
     public ?float $confidence = null;
-    public ?int $count = null;
     public ?float $fat_g = null;
     public ?float $fiber_g = null;
     public ?int $id = null;

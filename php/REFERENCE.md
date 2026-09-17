@@ -189,7 +189,6 @@ $food = $client->Food();
 | `category` | `string` | No |  |
 | `cholesterol_mg` | `float` | No | Cholesterol in mg per 100 g |
 | `confidence` | `float` | No | Data confidence score, 0–1 |
-| `count` | `int` | No |  |
 | `fat_g` | `float` | No | Total fat in grams per 100 g |
 | `fiber_g` | `float` | No | Fibre in grams per 100 g |
 | `id` | `int` | No |  |

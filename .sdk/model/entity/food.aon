@@ -45,11 +45,6 @@ main: kit: entity: food: {
       type: "`$NUMBER`"
     }
     {
-      name: "count"
-      req: false
-      type: "`$INTEGER`"
-    }
-    {
       name: "fat_g"
       req: false
       short: "Total fat in grams per 100 g"
